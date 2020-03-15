@@ -1,4 +1,4 @@
-= asciidoctor-docker-template
+= safer-pool-documenation
 :imagesdir: images
 :icons: font
 
