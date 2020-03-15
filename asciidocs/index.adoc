@@ -1,46 +1,138 @@
-= My Project
-firstname lastname
-1.0, yyyy-mm-dd
+= NETUNUS - Pool Safer
+Nina Holzinger, Konstantin Frank, David Andraschko
+1.0, 2020-03-15
 :sourcedir: ../src/main/java
 :icons: font
 :toc: left
 
-
 == Pflichtenheft "Was mache ich"
-
 
 === Ausgangssituation
 
-Die HTL Leonding ist eine HTL im oö. Zentralraum mit ca. 1000 Schülern und den Fachabteilungen Medientewchnik, Informatik, ....
+Im Jahr 2018 wurden etwas mehr als 85.000 Kinder in Österreich geboren.
+Vor allem im Sommer spielen die Kinder, wenn möglich draußen in der Sonne.
+In Österreich gibt es immer mehr Haushalte mit einem Swimming-pool im Garten.
+Laut der letzten Auswertung des Landes Oberösterreich gibt es in etwa 61.000 Pools in Oberösterreich,
+jedoch kann aktuell mit einer höheren Zahl gerechnet werden, da die Zahl stetig steigt.
+Viele Familien genießen ihre heißen Sommertage gemeinsam am Pool und erfreuen sich an der Abkühlung im Nass.
 
 === Istzustand
 ----
-Beschreibung der speziellen Situation zB in der Abteilung
+Es ist fast unmöglich, Kinder lückenlos zu beaufsichtigen, da einen jeder noch so kleine Umstand ablenken kann.
+Beispiele für solche Ablenkungen wären ein Anruf oder auch ein kurzer Gang ins Haus, um etwas zu holen.
 ----
 === Problemstellung
+----
+Auch wenn die Zeit, in der die Kinder unbeaufsichtigt sind, noch so kurz ist, kann es dadurch sehr schnell zu
+Badeunfällen kommen.
+----
+
 === Aufgabenstellung
+----
+Es ist ein System zu entwickeln, dass Objekte detektiert, die in den Pool fallen. Das müssen in erster Linie nicht nur Kleinkinder,
+sondern können auch Haustiere oder ein Ball, mit dem das Kind gerade spielt sein. Sobald solch eine Detektion durch das System erfolgt
+wird sowohl ein auditives wie auch visuelles Signal abgegeben werden.
+
+Die Detektion kann auch für eine gewisse Zeitdauer deaktiviert werden, wen man bewusst schwimmen gehen möchte.
+Nebenbedingungen wie ein Stromausfall, Sensorausfall etc. werden ebenso erkannt.
+
+Das aktuell geplante System tastet sich vorerst nur an einen Prototypen heran. Es wird möglichst ausfallsicher und einfach zu installieren sein.
+Wünschenswert wäre, wenn die Stromzufuhr möglichst nachhaltig wäre, daher wollen wir auf
+klassische Batterien verzichten und stattdessen wiederaufladbare Batterien verwenden.
+Ein Betrieb durch Solarstrom ist bei diesem geringen Verbrauch auszuschließen,
+da man zu viel Zusatz-Material benötigt.
+----
+
 ==== Funktionale Anforderungen
 
-[plantuml,wireframe,png]
+[plantuml]
 ----
-@startsalt
-{
-Name         | "                 "
-Modifiers:   | { (X) public | () default | () private | () protected
-	            [] abstract | [] final   | [] static }
-Superclass:  | { "java.lang.Object " | [Browse...] }
+@startuml
+left to right direction
+actor Poolbesitzer
+actor Poolbenutzer
+rectangle NETUNUS{
+    Poolbesitzer -- (Bekommt Benachrichtigung)
+    Poolbesitzer -- (Deaktiviert Alarm)
+    Poolbesitzer -- (Deaktiviert zeitgesteuert das Überwachungssystem)
+    Poolbesitzer -- (Betrachtet vergangene Auslöser)
+    (Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>
+    (Auslösen des Alarms) -- Poolbenutzer
 }
-@endsalt
+@enduml
 ----
+
 ==== Nichtfunktionale Anforderungen (NFA)
+----
+Das System wird leicht zu bedienen und übersichtlich aufgebaut sein. Auch die App wird nur die wichtigsten Funktionen
+enthalten um dem User die Bedienung so leicht als möglich zu machen.
+
+Die Alarmierung des Systems wird, je nach Poolgröße, so schnell wie möglich erfolgen um die Personen in der Umgebung
+schnellstmöglich zu alarmieren.
+
+Die App zum Produkt wird in mehreren Sprachen verwendbar sein um diese nicht nur in den deutschsprachigen Ländern
+benutzen zu können.
+
+Das System muss gewährleisten, dass im Falle eines (bevorstehenden) Ausfalls, man sofort in der Handyapp benachrichtigt,
+um diesen so schnell wie möglich beheben zu können. Außerdem werden alle Daten vergangener Alarme jederzeit, nur für den
+jeweiligen Nutzer, einsehbar sein.
+----
+
 === Ziele
+----
+Das klare Ziel dieser Anwendung ist es Kinder sowie Haustiere vor Badeunfällen zu bewahren.
+Wie schon erwähnt wird das System möglichst nachhaltig betrieben.
+Es wird eine App zur noch schnelleren Benachrichtigung und angenehmerer Benutzung des Systems entwickelt.
+----
+
 === Mengengerüst
-=== Rahmenbedingungen
-zB Vorgaben vom Auftraggeber
+----
+Ein durchschnittlicher Haushalt in Österreich umfasst 2,22 Personen. Das heißst die App wird pro Familie von unterschiedlich vielen Personen genutzt.
+In der Datenbank werden nur die ausgelösten Alarme mit der entsprechenden Uhrzeit gespeichert die der Benutzer über die App einsehen kann.
+Je nach Anzahl der Unfälle/Alarme können das in einem Jahr unterschiedlich viele
+Datenbankeinträge werden.
+----
 
 == Entwurf "Wie mache ich es"
+
 === Systemarchitektur
-=== ...
+
+[plantuml]
+----
+@startuml
+
+cloud "Kubernetes" {
+    node "docker-compose" {
+        [Quarkus-Server]
+        database "MariaDB" {
+            folder "Bisherige Unfälle" {
+                [Unfälle]
+            }
+        }
+    }
+}
+
+node "Sensor + Microcontroller" {
+    [Microcontroller] - [Gyrosensor]
+}
+
+[MQTT-Broker]
+[Webbrowser]
+
+[Microcontroller] --> [MQTT-Broker]
+[MQTT-Broker] --> [Quarkus-Server]
+[Quarkus-Server] --> [MQTT-Broker]
+[Quarkus-Server] --> [Webbrowser]
+[Quarkus-Server] --> [Unfälle]
+[Unfälle] --> [Quarkus-Server]
+
+@enduml
+----
+
+=== Zustandsdiagramm
+=== Anwendungsfalldiagramm
+=== Youtrack-Diagramm-Epics
+=== Youtrack-Diagramm-Sprints
 
 == Projekthandbuch "Organisatorische Rahmenbedigungen"
 
