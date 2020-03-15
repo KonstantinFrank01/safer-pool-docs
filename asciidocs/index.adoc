@@ -173,8 +173,8 @@ rectangle NETUNUS{
 @enduml
 ----
 
-=== Youtrack-Diagramm-Epics
-=== Youtrack-Diagramm-Sprints
+=== Youtrack-Diagramm
+image::youtrack-diagram.png[Youtrack-Diagram]
 
 == Projekthandbuch "Organisatorische Rahmenbedigungen"
 
