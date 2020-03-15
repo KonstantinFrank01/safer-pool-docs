@@ -194,6 +194,3 @@ mit User-Stories (definiert in YouTrack)
 @enduml
 ----
 
-
-link:demo.html[Demo]
-
