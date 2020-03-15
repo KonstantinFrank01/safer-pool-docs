@@ -130,7 +130,49 @@ node "Sensor + Microcontroller" {
 ----
 
 === Zustandsdiagramm
+[plantuml]
+----
+@startuml
+[*] --> DetektionAktiv
+DetektionAktiv --> DetektionDeaktiv : Benutzer deaktiviert
+DetektionDeaktiv --> DetektionAktiv : Benutzer deaktiviert
+DetektionDeaktiv --> DetektionAktiv : nach gewisser Zeit
+
+DetektionAktiv --> Systemausfall : Batterie leer
+DetektionAktiv --> Systemausfall : Broker defekt
+DetektionAktiv --> Systemausfall : Internetverbindung abgebrochen
+
+DetektionDeaktiv --> Systemausfall : Batterie leer
+DetektionDeaktiv --> Systemausfall : Broker defekt
+DetektionDeaktiv --> Systemausfall : Internetverbindung abgebrochen
+
+DetektionAktiv --> Alarm : Unfall detektiert
+
+Systemausfall --> Alarm : bei jedem Ausfall
+
+Alarm --> DetektionAktiv : Alarm ausgeschaltet
+Alarm --> DetektionDeaktiv : Alarm ausgeschaltet
+@enduml
+----
+
 === Anwendungsfalldiagramm
+[plantuml]
+----
+@startuml
+left to right direction
+actor Poolbesitzer
+actor Poolbenutzer
+rectangle NETUNUS{
+    Poolbesitzer -- (Bekommt Benachrichtigung)
+    Poolbesitzer -- (Deaktiviert Alarm)
+    Poolbesitzer -- (Deaktiviert zeitgesteuert das Überwachungssystem)
+    Poolbesitzer -- (Betrachtet vergangene Auslöser)
+    (Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>
+    (Auslösen des Alarms) -- Poolbenutzer
+}
+@enduml
+----
+
 === Youtrack-Diagramm-Epics
 === Youtrack-Diagramm-Sprints
 
