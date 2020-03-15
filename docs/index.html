@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<meta name="author" content="firstname lastname">
+<meta name="author" content="Nina Holzinger, Konstantin Frank, David Andraschko">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>My Project</title>
+<title>NETUNUS - Pool Safer</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -449,11 +449,11 @@ pre.rouge .hll * {
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>My Project</h1>
+<h1>NETUNUS - Pool Safer</h1>
 <div class="details">
-<span id="author" class="author">firstname lastname</span><br>
+<span id="author" class="author">Nina Holzinger, Konstantin Frank, David Andraschko</span><br>
 <span id="revnumber">version 1.0,</span>
-<span id="revdate">yyyy-mm-dd</span>
+<span id="revdate">2020-03-15</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -466,13 +466,15 @@ pre.rouge .hll * {
 <li><a href="#_aufgabenstellung">1.4. Aufgabenstellung</a></li>
 <li><a href="#_ziele">1.5. Ziele</a></li>
 <li><a href="#_mengengerüst">1.6. Mengengerüst</a></li>
-<li><a href="#_rahmenbedingungen">1.7. Rahmenbedingungen</a></li>
 </ul>
 </li>
 <li><a href="#_entwurf_wie_mache_ich_es">2. Entwurf "Wie mache ich es"</a>
 <ul class="sectlevel2">
 <li><a href="#_systemarchitektur">2.1. Systemarchitektur</a></li>
-<li><a href="#">2.2. &#8230;&#8203;</a></li>
+<li><a href="#_zustandsdiagramm">2.2. Zustandsdiagramm</a></li>
+<li><a href="#_anwendungsfalldiagramm">2.3. Anwendungsfalldiagramm</a></li>
+<li><a href="#_youtrack_diagramm_epics">2.4. Youtrack-Diagramm-Epics</a></li>
+<li><a href="#_youtrack_diagramm_sprints">2.5. Youtrack-Diagramm-Sprints</a></li>
 </ul>
 </li>
 <li><a href="#_projekthandbuch_organisatorische_rahmenbedigungen">3. Projekthandbuch "Organisatorische Rahmenbedigungen"</a>
@@ -490,48 +492,97 @@ pre.rouge .hll * {
 <div class="sect2">
 <h3 id="_ausgangssituation"><a class="anchor" href="#_ausgangssituation"></a>1.1. Ausgangssituation</h3>
 <div class="paragraph">
-<p>Die HTL Leonding ist eine HTL im oö. Zentralraum mit ca. 1000 Schülern und den Fachabteilungen Medientewchnik, Informatik, &#8230;&#8203;.</p>
+<p>Im Jahr 2018 wurden etwas mehr als 85.000 Kinder in Österreich geboren.
+Vor allem im Sommer spielen die Kinder, wenn möglich draußen in der Sonne.
+In Österreich gibt es immer mehr Haushalte mit einem Swimming-pool im Garten.
+Laut der letzten Auswertung des Landes Oberösterreich gibt es in etwa 61.000 Pools in Oberösterreich,
+jedoch kann aktuell mit einer höheren Zahl gerechnet werden, da die Zahl stetig steigt.
+Viele Familien genießen ihre heißen Sommertage gemeinsam am Pool und erfreuen sich an der Abkühlung im Nass.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_istzustand"><a class="anchor" href="#_istzustand"></a>1.2. Istzustand</h3>
 <div class="listingblock">
 <div class="content">
-<pre>Beschreibung der speziellen Situation zB in der Abteilung</pre>
+<pre>Es ist fast unmöglich, Kinder lückenlos zu beaufsichtigen, da einen jeder noch so kleine Umstand ablenken kann.
+Beispiele für solche Ablenkungen wären ein Anruf oder auch ein kurzer Gang ins Haus, um etwas zu holen.</pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_problemstellung"><a class="anchor" href="#_problemstellung"></a>1.3. Problemstellung</h3>
-
+<div class="listingblock">
+<div class="content">
+<pre>Auch wenn die Zeit, in der die Kinder unbeaufsichtigt sind, noch so kurz ist, kann es dadurch sehr schnell zu
+Badeunfällen kommen.</pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_aufgabenstellung"><a class="anchor" href="#_aufgabenstellung"></a>1.4. Aufgabenstellung</h3>
+<div class="listingblock">
+<div class="content">
+<pre>Es ist ein System zu entwickeln, dass Objekte detektiert, die in den Pool fallen. Das müssen in erster Linie nicht nur Kleinkinder,
+sondern können auch Haustiere oder ein Ball, mit dem das Kind gerade spielt sein. Sobald solch eine Detektion durch das System erfolgt
+wird sowohl ein auditives wie auch visuelles Signal abgegeben werden.
+
+Die Detektion kann auch für eine gewisse Zeitdauer deaktiviert werden, wen man bewusst schwimmen gehen möchte.
+Nebenbedingungen wie ein Stromausfall, Sensorausfall etc. werden ebenso erkannt.
+
+Das aktuell geplante System tastet sich vorerst nur an einen Prototypen heran. Es wird möglichst ausfallsicher und einfach zu installieren sein.
+Wünschenswert wäre, wenn die Stromzufuhr möglichst nachhaltig wäre, daher wollen wir auf
+klassische Batterien verzichten und stattdessen wiederaufladbare Batterien verwenden.
+Ein Betrieb durch Solarstrom ist bei diesem geringen Verbrauch auszuschließen,
+da man zu viel Zusatz-Material benötigt.</pre>
+</div>
+</div>
 <div class="sect3">
 <h4 id="_funktionale_anforderungen"><a class="anchor" href="#_funktionale_anforderungen"></a>1.4.1. Funktionale Anforderungen</h4>
 <div class="imageblock">
 <div class="content">
-<img src="images/wireframe.png" alt="wireframe" width="376" height="84">
+<img src="images/diag-0f00baf090b1fead2c2fa01321e582a2.png" alt="diag 0f00baf090b1fead2c2fa01321e582a2" width="694" height="497">
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_nichtfunktionale_anforderungen_nfa"><a class="anchor" href="#_nichtfunktionale_anforderungen_nfa"></a>1.4.2. Nichtfunktionale Anforderungen (NFA)</h4>
+<div class="listingblock">
+<div class="content">
+<pre>Das System wird leicht zu bedienen und übersichtlich aufgebaut sein. Auch die App wird nur die wichtigsten Funktionen
+enthalten um dem User die Bedienung so leicht als möglich zu machen.
 
+Die Alarmierung des Systems wird, je nach Poolgröße, so schnell wie möglich erfolgen um die Personen in der Umgebung
+schnellstmöglich zu alarmieren.
+
+Die App zum Produkt wird in mehreren Sprachen verwendbar sein um diese nicht nur in den deutschsprachigen Ländern
+benutzen zu können.
+
+Das System muss gewährleisten, dass im Falle eines (bevorstehenden) Ausfalls, man sofort in der Handyapp benachrichtigt,
+um diesen so schnell wie möglich beheben zu können. Außerdem werden alle Daten vergangener Alarme jederzeit, nur für den
+jeweiligen Nutzer, einsehbar sein.</pre>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_ziele"><a class="anchor" href="#_ziele"></a>1.5. Ziele</h3>
-
+<div class="listingblock">
+<div class="content">
+<pre>Das klare Ziel dieser Anwendung ist es Kinder sowie Haustiere vor Badeunfällen zu bewahren.
+Wie schon erwähnt wird das System möglichst nachhaltig betrieben.
+Es wird eine App zur noch schnelleren Benachrichtigung und angenehmerer Benutzung des Systems entwickelt.</pre>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_mengengerüst"><a class="anchor" href="#_mengengerüst"></a>1.6. Mengengerüst</h3>
-
+<div class="listingblock">
+<div class="content">
+<pre>Ein durchschnittlicher Haushalt in Österreich umfasst 2,22 Personen. Das heißst die App wird pro Familie von unterschiedlich vielen Personen genutzt.
+In der Datenbank werden nur die ausgelösten Alarme mit der entsprechenden Uhrzeit gespeichert die der Benutzer über die App einsehen kann.
+Je nach Anzahl der Unfälle/Alarme können das in einem Jahr unterschiedlich viele
+Datenbankeinträge werden.</pre>
 </div>
-<div class="sect2">
-<h3 id="_rahmenbedingungen"><a class="anchor" href="#_rahmenbedingungen"></a>1.7. Rahmenbedingungen</h3>
-<div class="paragraph">
-<p>zB Vorgaben vom Auftraggeber</p>
 </div>
 </div>
 </div>
@@ -541,10 +592,26 @@ pre.rouge .hll * {
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_systemarchitektur"><a class="anchor" href="#_systemarchitektur"></a>2.1. Systemarchitektur</h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/diag-d20dd08dd2176477c4cabeb0d0e7828b.png" alt="diag d20dd08dd2176477c4cabeb0d0e7828b" width="447" height="585">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zustandsdiagramm"><a class="anchor" href="#_zustandsdiagramm"></a>2.2. Zustandsdiagramm</h3>
 
 </div>
 <div class="sect2">
-<h3 id=""><a class="anchor" href="#"></a>2.2. &#8230;&#8203;</h3>
+<h3 id="_anwendungsfalldiagramm"><a class="anchor" href="#_anwendungsfalldiagramm"></a>2.3. Anwendungsfalldiagramm</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_youtrack_diagramm_epics"><a class="anchor" href="#_youtrack_diagramm_epics"></a>2.4. Youtrack-Diagramm-Epics</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_youtrack_diagramm_sprints"><a class="anchor" href="#_youtrack_diagramm_sprints"></a>2.5. Youtrack-Diagramm-Sprints</h3>
 
 </div>
 </div>
@@ -572,7 +639,7 @@ pre.rouge .hll * {
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2020-03-15 15:17:54 UTC
+Last updated 2020-03-15 15:57:57 UTC
 </div>
 </div>
 </body>
