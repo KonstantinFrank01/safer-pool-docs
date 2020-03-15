@@ -87,10 +87,10 @@ Es wird eine App zur noch schnelleren Benachrichtigung und angenehmerer Benutzun
 
 === Mengengerüst
 ----
-Ein durchschnittlicher Haushalt in Österreich umfasst 2,22 Personen. Das heißst die App wird pro Familie von unterschiedlich vielen Personen genutzt.
+Die App wird pro Familie von unterschiedlich vielen Personen genutzt.
 In der Datenbank werden nur die ausgelösten Alarme mit der entsprechenden Uhrzeit gespeichert die der Benutzer über die App einsehen kann.
 Je nach Anzahl der Unfälle/Alarme können das in einem Jahr unterschiedlich viele
-Datenbankeinträge werden.
+Datenbankeinträge werden, aber da es nicht übermäßig viele und große Daten sind reicht eine kleine Datenbank.
 ----
 
 == Entwurf "Wie mache ich es"
