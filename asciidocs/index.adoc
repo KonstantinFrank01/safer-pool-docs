@@ -160,11 +160,11 @@ left to right direction
 actor Poolbesitzer
 actor Poolbenutzer
 rectangle NETUNUS{
-    Poolbesitzer -- (Bekommt Benachrichtigung)
+    /'Poolbesitzer -- (Bekommt Benachrichtigung)'/
     Poolbesitzer -- (Deaktiviert Alarm)
     Poolbesitzer -- (Deaktiviert zeitgesteuert das Überwachungssystem)
     Poolbesitzer -- (Betrachtet vergangene Auslöser)
-    (Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>
+    /'(Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>'/
     (Auslösen des Alarms) -- Poolbenutzer
 }
 @enduml
