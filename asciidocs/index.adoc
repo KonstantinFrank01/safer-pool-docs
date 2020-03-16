@@ -8,19 +8,21 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 == Pflichtenheft "Was mache ich"
 
 === Ausgangssituation
-
+----
 Im Jahr 2018 wurden etwas mehr als 85.000 Kinder in Österreich geboren.
 Vor allem im Sommer spielen die Kinder, wenn möglich draußen in der Sonne.
 In Österreich gibt es immer mehr Haushalte mit einem Swimming-pool im Garten.
 Laut der letzten Auswertung des Landes Oberösterreich gibt es in etwa 61.000 Pools in Oberösterreich,
 jedoch kann aktuell mit einer höheren Zahl gerechnet werden, da die Zahl stetig steigt.
 Viele Familien genießen ihre heißen Sommertage gemeinsam am Pool und erfreuen sich an der Abkühlung im Nass.
+----
 
 === Istzustand
 ----
 Es ist fast unmöglich, Kinder lückenlos zu beaufsichtigen, da einen jeder noch so kleine Umstand ablenken kann.
 Beispiele für solche Ablenkungen wären ein Anruf oder auch ein kurzer Gang ins Haus, um etwas zu holen.
 ----
+
 === Problemstellung
 ----
 Auch wenn die Zeit, in der die Kinder unbeaufsichtigt sind, noch so kurz ist, kann es dadurch sehr schnell zu
@@ -53,11 +55,11 @@ left to right direction
 actor Poolbesitzer
 actor Poolbenutzer
 rectangle NETUNUS{
-    Poolbesitzer -- (Bekommt Benachrichtigung)
+    /'Poolbesitzer -- (Bekommt Benachrichtigung)'/
     Poolbesitzer -- (Deaktiviert Alarm)
     Poolbesitzer -- (Deaktiviert zeitgesteuert das Überwachungssystem)
     Poolbesitzer -- (Betrachtet vergangene Auslöser)
-    (Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>
+    /'(Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>'/
     (Auslösen des Alarms) -- Poolbenutzer
 }
 @enduml
@@ -65,17 +67,12 @@ rectangle NETUNUS{
 
 ==== Nichtfunktionale Anforderungen (NFA)
 ----
-Das System wird leicht zu bedienen und übersichtlich aufgebaut sein. Auch die App wird nur die wichtigsten Funktionen
-enthalten um dem User die Bedienung so leicht als möglich zu machen.
+Das System wird leicht zu bedienen und übersichtlich aufgebaut sein.
 
 Die Alarmierung des Systems wird, je nach Poolgröße, so schnell wie möglich erfolgen um die Personen in der Umgebung
 schnellstmöglich zu alarmieren.
 
-Die App zum Produkt wird in mehreren Sprachen verwendbar sein um diese nicht nur in den deutschsprachigen Ländern
-benutzen zu können.
-
-Das System muss gewährleisten, dass im Falle eines (bevorstehenden) Ausfalls, man sofort in der Handyapp benachrichtigt,
-um diesen so schnell wie möglich beheben zu können. Außerdem werden alle Daten vergangener Alarme jederzeit, nur für den
+Außerdem werden alle Daten vergangener Alarme jederzeit, nur für den
 jeweiligen Nutzer, einsehbar sein.
 ----
 
@@ -83,7 +80,6 @@ jeweiligen Nutzer, einsehbar sein.
 ----
 Das klare Ziel dieser Anwendung ist es Kinder sowie Haustiere vor Badeunfällen zu bewahren.
 Wie schon erwähnt wird das System möglichst nachhaltig betrieben.
-Es wird eine App zur noch schnelleren Benachrichtigung und angenehmerer Benutzung des Systems entwickelt.
 ----
 
 === Mengengerüst
