@@ -116,12 +116,11 @@ node "Sensor + Microcontroller" {
 [MQTT-Broker]
 [Webbrowser]
 
-[Microcontroller] --> [MQTT-Broker]
-[MQTT-Broker] --> [Quarkus-Server]
-[Quarkus-Server] --> [MQTT-Broker]
-[Quarkus-Server] --> [Webbrowser]
-[Quarkus-Server] --> [Unfälle]
-[Unfälle] --> [Quarkus-Server]
+[Microcontroller] --> [MQTT-Broker] : << publish data >>
+[Quarkus-Server] --> [MQTT-Broker] : << subscribe data >>
+[Quarkus-Server] --> [Webbrowser] : << send alarm cases >>
+[Quarkus-Server] --> [Unfälle] : << save data >>
+[Unfälle] --> [Quarkus-Server] : << retrieve old data >>
 
 @enduml
 ----
