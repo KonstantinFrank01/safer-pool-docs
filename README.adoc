@@ -18,13 +18,6 @@ For each output (revealjs, html5 and pdf) a single folder is created.
 
 IMPORTANT: The html-output is generated into a `docs`-folder, so it is published to gh-pages automatically.
 
-== gh-pages
-
-This are the gh-pages of the template-project.
-
-* https://htl-leonding-college.github.io/asciidoctor-docker-template
-* https://htl-leonding-college.github.io/asciidoctor-docker-template/demo.html[]
-
 === Necessary Frameworks
 
 For RevealJS the revealjs-folder will be added automatically
