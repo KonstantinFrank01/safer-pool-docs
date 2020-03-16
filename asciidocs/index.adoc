@@ -48,6 +48,7 @@ da man zu viel Zusatz-Material benötigt.
 [plantuml]
 ----
 @startuml
+skinparam handwritten true
 left to right direction
 actor Poolbesitzer
 actor Poolbenutzer
@@ -100,7 +101,7 @@ Datenbankeinträge werden, aber da es nicht übermäßig viele und große Daten 
 [plantuml]
 ----
 @startuml
-
+skinparam handwritten true
 cloud "Kubernetes" {
     node "docker-compose" {
         [Quarkus-Server]
@@ -159,6 +160,7 @@ Alarm --> DetektionDeaktiv : Alarm ausgeschaltet
 [plantuml]
 ----
 @startuml
+skinparam handwritten true
 left to right direction
 actor Poolbesitzer
 actor Poolbenutzer
