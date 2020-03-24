@@ -171,11 +171,20 @@ rectangle NETUNUS{
 @enduml
 ----
 
-=== Youtrack-Diagramm
-image::youtrack-diagram.png[Youtrack-Diagram]
+=== Youtrack-Diagram-Sprints
+image::youtrack-diagram-sprints.png[Youtrack-Diagram-Sprints]
+
+=== Youtrack-Diagram-Epic
+image::youtrack-diagram-epic.png[Youtrack-Diagram-Epic]
+
 
 == Projekthandbuch "Organisatorische Rahmenbedigungen"
 
+=== Youtrack-Diagram-Gantt
+image::youtrack-diagram-gantt.png[Youtrack-Diagram-Gantt]
+
+
+////
 === GANTT-Diagramm
 [plantuml,gantt-protoype,png]
 ----
@@ -186,4 +195,6 @@ image::youtrack-diagram.png[Youtrack-Diagram]
 [Get Notified] lasts 4 days
 @enduml
 ----
+////
+
 
