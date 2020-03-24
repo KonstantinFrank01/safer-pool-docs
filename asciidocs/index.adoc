@@ -38,11 +38,7 @@ wird sowohl ein auditives wie auch visuelles Signal abgegeben werden.
 Die Detektion kann auch für eine gewisse Zeitdauer deaktiviert werden, wen man bewusst schwimmen gehen möchte.
 Nebenbedingungen wie ein Stromausfall, Sensorausfall etc. werden ebenso erkannt.
 
-Das aktuell geplante System tastet sich vorerst nur an einen Prototypen heran. Es wird möglichst ausfallsicher und einfach zu installieren sein.
-Wünschenswert wäre, wenn die Stromzufuhr möglichst nachhaltig wäre, daher wollen wir auf
-klassische Batterien verzichten und stattdessen wiederaufladbare Batterien verwenden.
-Ein Betrieb durch Solarstrom ist bei diesem geringen Verbrauch auszuschließen,
-da man zu viel Zusatz-Material benötigt.
+Das aktuell geplante System tastet sich vorerst nur an einen Prototypen heran.
 ----
 
 ==== Funktionale Anforderungen
@@ -67,6 +63,11 @@ rectangle NETUNUS{
 
 ==== Nichtfunktionale Anforderungen (NFA)
 ----
+Wünschenswert wäre, wenn die Stromzufuhr möglichst nachhaltig wäre, daher wollen wir auf
+klassische Batterien verzichten und stattdessen wiederaufladbare Batterien verwenden.
+Ein Betrieb durch Solarstrom ist bei diesem geringen Verbrauch auszuschließen,
+da man zu viel Zusatz-Material benötigt.
+
 Das System wird leicht zu bedienen und übersichtlich aufgebaut sein.
 
 Die Alarmierung des Systems wird, je nach Poolgröße, so schnell wie möglich erfolgen um die Personen in der Umgebung
@@ -180,7 +181,7 @@ image::youtrack-diagram.png[Youtrack-Diagram]
 ----
 @startuml
 [Deactivate Monitoring] lasts 3 days
-[System Summary] lasts 2 days
+[System Summary] lasts 4 days
 [Get Notified] starts at [System Summary]'s end
 [Get Notified] lasts 4 days
 @enduml
