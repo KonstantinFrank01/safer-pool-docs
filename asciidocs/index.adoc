@@ -8,38 +8,38 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 == Pflichtenheft "Was mache ich"
 
 === Ausgangssituation
-----
+
 Im Jahr 2018 wurden etwas mehr als 85.000 Kinder in Österreich geboren.
 Vor allem im Sommer spielen die Kinder, wenn möglich draußen in der Sonne.
 In Österreich gibt es immer mehr Haushalte mit einem Swimming-pool im Garten.
-Laut der letzten Auswertung des Landes Oberösterreich gibt es in etwa 61.000 Pools in Oberösterreich,
+Laut der Auswertung des Landes Oberösterreich aus dem Jahr 2015 gibt es in etwa 61.000 Pools in Oberösterreich,
 jedoch kann aktuell mit einer höheren Zahl gerechnet werden, da die Zahl stetig steigt.
 Viele Familien genießen ihre heißen Sommertage gemeinsam am Pool und erfreuen sich an der Abkühlung im Nass.
-----
+
 
 === Ist-Zustand
-----
+
 Es ist fast unmöglich, Kinder lückenlos zu beaufsichtigen, da einen jeder noch so kleine Umstand ablenken kann.
 Beispiele für solche Ablenkungen wären ein Anruf oder auch ein kurzer Gang ins Haus, um etwas zu holen.
-----
+
 
 === Problemstellung
-----
+
 Auch wenn die Zeit, in der die Kinder unbeaufsichtigt sind, noch so kurz ist, kann es dadurch sehr schnell zu
 Badeunfällen kommen.
-----
+
 
 === Aufgabenstellung
-----
-Es ist ein System zu entwickeln, dass Objekte detektiert, die in den Pool fallen. Das müssen in erster Linie nicht nur Kleinkinder,
-sondern können auch Haustiere oder ein Ball, mit dem das Kind gerade spielt sein. Sobald solch eine Detektion durch das System erfolgt
-wird sowohl ein auditives wie auch visuelles Signal abgegeben werden.
 
-Die Detektion kann auch für eine gewisse Zeitdauer deaktiviert werden, wen man bewusst schwimmen gehen möchte.
-Nebenbedingungen wie ein Stromausfall, Sensorausfall etc. werden ebenso erkannt.
+Es ist ein System zu entwickeln, dass Objekte detektiert, die in den Pool fallen. Das müssen nicht nur Kleinkinder,
+sondern  oder ein Ball, mit dem das Kind gerade spielt sein. Sobald solch eine Detektion durch das System erfolgt
+wird sowohl ein auditiver wie auch visueller Alarm ausgelöst.
 
-Das aktuell geplante System tastet sich vorerst nur an einen Prototypen heran.
-----
+Die Detektion kann auch für eine gewisse Zeitdauer deaktiviert werden, wen man schwimmen gehen möchte.
+Nebenbedingungen wie ein Stromausfall, Sensorausfall etc. werden berücksichtigt.
+
+Das aktuell geplante System ist nur als Prototyp geplant, da
+die Sicherheitskontrollen für den tatsächlichen Betrieb noch nicht implementiert wurden.
 
 ==== Funktionale Anforderungen
 
@@ -49,47 +49,41 @@ Das aktuell geplante System tastet sich vorerst nur an einen Prototypen heran.
 skinparam handwritten true
 left to right direction
 actor Poolbesitzer
-actor Poolbenutzer
+actor Objekt
 rectangle NETUNUS{
     /'Poolbesitzer -- (Bekommt Benachrichtigung)'/
-    Poolbesitzer -- (Deaktiviert Alarm)
-    Poolbesitzer -- (Deaktiviert zeitgesteuert das Überwachungssystem)
-    Poolbesitzer -- (Betrachtet vergangene Auslöser)
+    Poolbesitzer -- (Alarm quittieren)
+    Poolbesitzer -- (Überwachungssystem zeitgesteuert deaktivieren)
+    Poolbesitzer -- (Historie betrachten)
     /'(Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>'/
-    (Auslösen des Alarms) -- Poolbenutzer
+    (Auslösen des Alarms) -- Objekt
 }
 @enduml
 ----
 
 ==== Nichtfunktionale Anforderungen (NFA)
-----
-Wünschenswert wäre, wenn die Stromzufuhr möglichst nachhaltig wäre, daher wollen wir auf
-klassische Batterien verzichten und stattdessen wiederaufladbare Batterien verwenden.
+Die Alarmierung des Systems wird, je nach Poolgröße, so schnell wie möglich erfolgen um die Personen in der Umgebung
+schnellstmöglich zu alarmieren.
+
 Ein Betrieb durch Solarstrom ist bei diesem geringen Verbrauch auszuschließen,
 da man zu viel Zusatz-Material benötigt.
 
 Das System wird leicht zu bedienen und übersichtlich aufgebaut sein.
 
-Die Alarmierung des Systems wird, je nach Poolgröße, so schnell wie möglich erfolgen um die Personen in der Umgebung
-schnellstmöglich zu alarmieren.
+Außerdem werden alle Daten vergangener Alarme, für berechtigte Personen, jederzeit einsehbar sein.
 
-Außerdem werden alle Daten vergangener Alarme jederzeit, nur für den
-jeweiligen Nutzer, einsehbar sein.
-----
 
 === Ziele
-----
+
 Das klare Ziel dieser Anwendung ist es Kinder sowie Haustiere vor Badeunfällen zu bewahren.
-Wie schon erwähnt wird das System möglichst nachhaltig betrieben.
-----
 
 === Mengengerüst
-----
+
 Die App wird pro Familie von unterschiedlich vielen Personen genutzt.
 In der Datenbank werden nur die ausgelösten Alarme mit der entsprechenden Uhrzeit gespeichert die der Benutzer über die App einsehen kann.
 Je nach Anzahl der Unfälle/Alarme können das in einem Jahr unterschiedlich viele
 Datenbankeinträge werden, aber da es nicht übermäßig viele und große Daten sind reicht eine kleine Datenbank.
-----
+
 
 == Entwurf "Wie mache ich es"
 
@@ -121,7 +115,7 @@ node "Sensor + Microcontroller" {
 [Quarkus-Server] --> [MQTT-Broker] : << subscribe data >>
 [Quarkus-Server] --> [Webbrowser] : << send alarm cases >>
 [Quarkus-Server] --> [Unfälle] : << save data >>
-[Unfälle] --> [Quarkus-Server] : << retrieve old data >>
+[Unfälle] --> [Quarkus-Server] : << retrieve data >>
 
 @enduml
 ----
@@ -159,14 +153,14 @@ Alarm --> DetektionDeaktiv : Alarm ausgeschaltet
 skinparam handwritten true
 left to right direction
 actor Poolbesitzer
-actor Poolbenutzer
+actor Objekt
 rectangle NETUNUS{
     /'Poolbesitzer -- (Bekommt Benachrichtigung)'/
-    Poolbesitzer -- (Deaktiviert Alarm)
-    Poolbesitzer -- (Deaktiviert zeitgesteuert das Überwachungssystem)
-    Poolbesitzer -- (Betrachtet vergangene Auslöser)
+    Poolbesitzer -- (Alarm quittieren)
+    Poolbesitzer -- (Überwachungssystem zeitgesteuert deaktivieren)
+    Poolbesitzer -- (Historie betrachten)
     /'(Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>'/
-    (Auslösen des Alarms) -- Poolbenutzer
+    (Auslösen des Alarms) -- Objekt
 }
 @enduml
 ----
