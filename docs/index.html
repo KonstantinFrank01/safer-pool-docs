@@ -491,95 +491,83 @@ pre.rouge .hll * {
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_ausgangssituation"><a class="anchor" href="#_ausgangssituation"></a>1.1. Ausgangssituation</h3>
-<div class="listingblock">
-<div class="content">
-<pre>Im Jahr 2018 wurden etwas mehr als 85.000 Kinder in Österreich geboren.
+<div class="paragraph">
+<p>Im Jahr 2018 wurden etwas mehr als 85.000 Kinder in Österreich geboren.
 Vor allem im Sommer spielen die Kinder, wenn möglich draußen in der Sonne.
 In Österreich gibt es immer mehr Haushalte mit einem Swimming-pool im Garten.
-Laut der letzten Auswertung des Landes Oberösterreich gibt es in etwa 61.000 Pools in Oberösterreich,
+Laut der Auswertung des Landes Oberösterreich aus dem Jahr 2015 gibt es in etwa 61.000 Pools in Oberösterreich,
 jedoch kann aktuell mit einer höheren Zahl gerechnet werden, da die Zahl stetig steigt.
-Viele Familien genießen ihre heißen Sommertage gemeinsam am Pool und erfreuen sich an der Abkühlung im Nass.</pre>
-</div>
+Viele Familien genießen ihre heißen Sommertage gemeinsam am Pool und erfreuen sich an der Abkühlung im Nass.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_ist_zustand"><a class="anchor" href="#_ist_zustand"></a>1.2. Ist-Zustand</h3>
-<div class="listingblock">
-<div class="content">
-<pre>Es ist fast unmöglich, Kinder lückenlos zu beaufsichtigen, da einen jeder noch so kleine Umstand ablenken kann.
-Beispiele für solche Ablenkungen wären ein Anruf oder auch ein kurzer Gang ins Haus, um etwas zu holen.</pre>
-</div>
+<div class="paragraph">
+<p>Es ist fast unmöglich, Kinder lückenlos zu beaufsichtigen, da einen jeder noch so kleine Umstand ablenken kann.
+Beispiele für solche Ablenkungen wären ein Anruf oder auch ein kurzer Gang ins Haus, um etwas zu holen.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_problemstellung"><a class="anchor" href="#_problemstellung"></a>1.3. Problemstellung</h3>
-<div class="listingblock">
-<div class="content">
-<pre>Auch wenn die Zeit, in der die Kinder unbeaufsichtigt sind, noch so kurz ist, kann es dadurch sehr schnell zu
-Badeunfällen kommen.</pre>
-</div>
+<div class="paragraph">
+<p>Auch wenn die Zeit, in der die Kinder unbeaufsichtigt sind, noch so kurz ist, kann es dadurch sehr schnell zu
+Badeunfällen kommen.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_aufgabenstellung"><a class="anchor" href="#_aufgabenstellung"></a>1.4. Aufgabenstellung</h3>
-<div class="listingblock">
-<div class="content">
-<pre>Es ist ein System zu entwickeln, dass Objekte detektiert, die in den Pool fallen. Das müssen in erster Linie nicht nur Kleinkinder,
-sondern können auch Haustiere oder ein Ball, mit dem das Kind gerade spielt sein. Sobald solch eine Detektion durch das System erfolgt
-wird sowohl ein auditives wie auch visuelles Signal abgegeben werden.
-
-Die Detektion kann auch für eine gewisse Zeitdauer deaktiviert werden, wen man bewusst schwimmen gehen möchte.
-Nebenbedingungen wie ein Stromausfall, Sensorausfall etc. werden ebenso erkannt.
-
-Das aktuell geplante System tastet sich vorerst nur an einen Prototypen heran.</pre>
+<div class="paragraph">
+<p>Es ist ein System zu entwickeln, dass Objekte detektiert, die in den Pool fallen. Das müssen nicht nur Kleinkinder,
+sondern  oder ein Ball, mit dem das Kind gerade spielt sein. Sobald solch eine Detektion durch das System erfolgt
+wird sowohl ein auditiver wie auch visueller Alarm ausgelöst.</p>
 </div>
+<div class="paragraph">
+<p>Die Detektion kann auch für eine gewisse Zeitdauer deaktiviert werden, wen man schwimmen gehen möchte.
+Nebenbedingungen wie ein Stromausfall, Sensorausfall etc. werden berücksichtigt.</p>
+</div>
+<div class="paragraph">
+<p>Das aktuell geplante System ist nur als Prototyp geplant, da
+die Sicherheitskontrollen für den tatsächlichen Betrieb noch nicht implementiert wurden.</p>
 </div>
 <div class="sect3">
 <h4 id="_funktionale_anforderungen"><a class="anchor" href="#_funktionale_anforderungen"></a>1.4.1. Funktionale Anforderungen</h4>
 <div class="imageblock">
 <div class="content">
-<img src="images/diag-39206f54730dd6b7191852e77d8adf62.png" alt="diag 39206f54730dd6b7191852e77d8adf62" width="688" height="402">
+<img src="images/diag-de1351deb785692f02abc1d8ed274eb4.png" alt="diag de1351deb785692f02abc1d8ed274eb4" width="623" height="381">
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_nichtfunktionale_anforderungen_nfa"><a class="anchor" href="#_nichtfunktionale_anforderungen_nfa"></a>1.4.2. Nichtfunktionale Anforderungen (NFA)</h4>
-<div class="listingblock">
-<div class="content">
-<pre>Wünschenswert wäre, wenn die Stromzufuhr möglichst nachhaltig wäre, daher wollen wir auf
-klassische Batterien verzichten und stattdessen wiederaufladbare Batterien verwenden.
-Ein Betrieb durch Solarstrom ist bei diesem geringen Verbrauch auszuschließen,
-da man zu viel Zusatz-Material benötigt.
-
-Das System wird leicht zu bedienen und übersichtlich aufgebaut sein.
-
-Die Alarmierung des Systems wird, je nach Poolgröße, so schnell wie möglich erfolgen um die Personen in der Umgebung
-schnellstmöglich zu alarmieren.
-
-Außerdem werden alle Daten vergangener Alarme jederzeit, nur für den
-jeweiligen Nutzer, einsehbar sein.</pre>
+<div class="paragraph">
+<p>Die Alarmierung des Systems wird, je nach Poolgröße, so schnell wie möglich erfolgen um die Personen in der Umgebung
+schnellstmöglich zu alarmieren.</p>
 </div>
+<div class="paragraph">
+<p>Ein Betrieb durch Solarstrom ist bei diesem geringen Verbrauch auszuschließen,
+da man zu viel Zusatz-Material benötigt.</p>
+</div>
+<div class="paragraph">
+<p>Das System wird leicht zu bedienen und übersichtlich aufgebaut sein.</p>
+</div>
+<div class="paragraph">
+<p>Außerdem werden alle Daten vergangener Alarme, für berechtigte Personen, jederzeit einsehbar sein.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_ziele"><a class="anchor" href="#_ziele"></a>1.5. Ziele</h3>
-<div class="listingblock">
-<div class="content">
-<pre>Das klare Ziel dieser Anwendung ist es Kinder sowie Haustiere vor Badeunfällen zu bewahren.
-Wie schon erwähnt wird das System möglichst nachhaltig betrieben.</pre>
-</div>
+<div class="paragraph">
+<p>Das klare Ziel dieser Anwendung ist es Kinder sowie Haustiere vor Badeunfällen zu bewahren.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_mengengerüst"><a class="anchor" href="#_mengengerüst"></a>1.6. Mengengerüst</h3>
-<div class="listingblock">
-<div class="content">
-<pre>Die App wird pro Familie von unterschiedlich vielen Personen genutzt.
+<div class="paragraph">
+<p>Die App wird pro Familie von unterschiedlich vielen Personen genutzt.
 In der Datenbank werden nur die ausgelösten Alarme mit der entsprechenden Uhrzeit gespeichert die der Benutzer über die App einsehen kann.
 Je nach Anzahl der Unfälle/Alarme können das in einem Jahr unterschiedlich viele
-Datenbankeinträge werden, aber da es nicht übermäßig viele und große Daten sind reicht eine kleine Datenbank.</pre>
-</div>
+Datenbankeinträge werden, aber da es nicht übermäßig viele und große Daten sind reicht eine kleine Datenbank.</p>
 </div>
 </div>
 </div>
@@ -591,7 +579,7 @@ Datenbankeinträge werden, aber da es nicht übermäßig viele und große Daten 
 <h3 id="_systemarchitektur"><a class="anchor" href="#_systemarchitektur"></a>2.1. Systemarchitektur</h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/diag-69006fa381693dd622df752886d5247e.png" alt="diag 69006fa381693dd622df752886d5247e" width="826" height="453">
+<img src="images/diag-a4bae71030c3f0f8a8e3f86e51a0fb42.png" alt="diag a4bae71030c3f0f8a8e3f86e51a0fb42" width="803" height="456">
 </div>
 </div>
 </div>
@@ -607,7 +595,7 @@ Datenbankeinträge werden, aber da es nicht übermäßig viele und große Daten 
 <h3 id="_anwendungsfalldiagramm"><a class="anchor" href="#_anwendungsfalldiagramm"></a>2.3. Anwendungsfalldiagramm</h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/diag-39206f54730dd6b7191852e77d8adf62.png" alt="diag 39206f54730dd6b7191852e77d8adf62" width="688" height="402">
+<img src="images/diag-de1351deb785692f02abc1d8ed274eb4.png" alt="diag de1351deb785692f02abc1d8ed274eb4" width="623" height="381">
 </div>
 </div>
 </div>
@@ -646,7 +634,7 @@ Datenbankeinträge werden, aber da es nicht übermäßig viele und große Daten 
 <div id="footer">
 <div id="footer-text">
 Version 1.0<br>
-Last updated 2020-03-24 12:50:18 UTC
+Last updated 2020-03-25 16:59:26 UTC
 </div>
 </div>
 </body>
