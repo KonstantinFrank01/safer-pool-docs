@@ -93,30 +93,31 @@ Datenbankeinträge werden, aber da es nicht übermäßig viele und große Daten 
 ----
 @startuml
 skinparam handwritten true
-cloud "Kubernetes" {
-    node "docker-compose" {
-        [Quarkus-Server]
-        database "MariaDB" {
-            folder "Bisherige Unfälle" {
-                [Unfälle]
-            }
-        }
-    }
-}
 
+    node "Raspberry PI" {
+        frame docker{
+        [MQTT-Broker]
+        [WebServer]
+        [Quarkus-Server]
+        database "SQLite" {
+        }
+          }
+    }
 node "Sensor + Microcontroller" {
     [Microcontroller] - [Gyrosensor]
 }
 
-[MQTT-Broker]
-[Webbrowser]
+[optisches Signal]
+[auditives Signal]
+[Microcontroller2]
 
-[Microcontroller] --> [MQTT-Broker] : << publish data >>
-[Quarkus-Server] --> [MQTT-Broker] : << subscribe data >>
-[Quarkus-Server] --> [Webbrowser] : << send alarm cases >>
-[Quarkus-Server] --> [Unfälle] : << save data >>
-[Unfälle] --> [Quarkus-Server] : << retrieve data >>
-
+[Microcontroller] --> [MQTT-Broker]
+[Quarkus-Server] <--> [MQTT-Broker]
+[Quarkus-Server] --> SQLite
+[Quarkus-Server] <---> WebServer
+[Microcontroller2] --> [MQTT-Broker]
+[optisches Signal] -- [Microcontroller2]
+[auditives Signal] -- [Microcontroller2]
 @enduml
 ----
 
