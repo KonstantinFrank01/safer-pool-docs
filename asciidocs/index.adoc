@@ -107,8 +107,8 @@ node "Sensor + Microcontroller" {
     [Microcontroller] - [Gyrosensor]
 }
 
-[optisches Signal]
-[auditives Signal]
+[optischer Sensor]
+[auditiver Sensor]
 [Microcontroller2]
 
 [Microcontroller] --> [MQTT-Broker]
@@ -129,16 +129,13 @@ skinparam handwritten true
 
 [*] --> DetektionAktiv
 state "Detektion aktiv" as DetektionAktiv
-DetektionAktiv --> DetektionDeaktiv : Benutzer deaktiviert
+DetektionAktiv --> DetektionDeaktiv : Detektion deaktivieren
 
-DetektionAktiv --> Systemausfall : Systemfehler aufgetreten / deaktivierung
-DetektionDeaktiv --> Systemausfall : xxx aufgetreten
-DetektionAktiv --> Alarm : Unfall detektiert
-Systemausfall --> Alarm : bei jedem Ausfall
-
-Alarm --> DetektionAktiv : Alarm ausgeschaltet
-Alarm --> DetektionDeaktiv : Alarm ausgeschaltet
-
+DetektionAktiv --> Systemausfall : Systemfehler aufgetreten / \n deaktivierung
+DetektionDeaktiv --> Systemausfall : Fehler aufgetreten
+DetektionAktiv --> Alarm : Unfall detektiert / \n Alarmierung optisch und auditiv
+Systemausfall --> Alarm : bei jedem Ausfall / \n Alarmierung nur optisch
+Alarm --> DetektionAktiv : nach Alarm wieder\n aktivieren
 @enduml
 ----
 
