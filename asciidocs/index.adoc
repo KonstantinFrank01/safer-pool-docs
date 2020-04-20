@@ -125,17 +125,24 @@ node "Sensor + Microcontroller" {
 [plantuml]
 ----
 @startuml
+
 skinparam handwritten true
 
 [*] --> DetektionAktiv
 state "Detektion aktiv" as DetektionAktiv
-DetektionAktiv --> DetektionDeaktiv : Detektion deaktivieren
+state "Detektion deaktiviert" as DetektionDeaktiv
+state "Alarm aktiv" as AlarmAktiv
+state "Alarm quittiert" as AlarmDeaktiv
+
+DetektionAktiv --> DetektionDeaktiv : Detektion für gewünschte Zeitdauer deaktivieren
+
 
 DetektionAktiv --> Systemausfall : Systemfehler aufgetreten / \n deaktivierung
 DetektionDeaktiv --> Systemausfall : Fehler aufgetreten
-DetektionAktiv --> Alarm : Unfall detektiert / \n Alarmierung optisch und auditiv
-Systemausfall --> Alarm : bei jedem Ausfall / \n Alarmierung nur optisch
-Alarm --> DetektionAktiv : nach Alarm wieder\n aktivieren
+DetektionAktiv --> AlarmAktiv : Unfall detektiert / \n Alarmierung optisch und auditiv
+Systemausfall --> AlarmAktiv : bei jedem Ausfall / \n Alarmierung nur optisch
+AlarmAktiv --> AlarmDeaktiv : Alarm quittieren
+AlarmDeaktiv --> DetektionAktiv : Alarm aktivieren
 @enduml
 ----
 
