@@ -11,6 +11,8 @@ cp -r -p -v asciidocs/.nojekyll $BUILD_DIR
 cp -r -p -v asciidocs/index.adoc $BUILD_DIR
 cp -r -p -v asciidocs/*.adoc $BUILD_DIR
 cp -r -p -v src $BUILD_DIR
+cp -r -p -v asciidocs/protocols $BUILD_DIR
+cp -r -p -v asciidocs/protocols/*.adoc $BUILD_DIR
 
 docker run --rm \
            -v ${PWD}/$BUILD_DIR:/documents \
