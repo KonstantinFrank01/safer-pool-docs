@@ -6,7 +6,7 @@ Author: Nina Holzinger, Konstantin Frank
 
 Attendees: Prof. T. Sütz, Prof. R. Reder, Nina Holzinger, Konstantin Frank, David Andraschko
 
-Version 1.0, 2020-03-15
+Version 1.0, 10-02-2020
 
 == Datenbank
 
