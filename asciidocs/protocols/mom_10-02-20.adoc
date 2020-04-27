@@ -1,0 +1,46 @@
+= NETUNUS - Minutes of Meeting
+Nina Holzinger, Konstantin Frank, David Andraschko
+Author: Nina Holzinger, Konstantin Frank
+Attendees: Prof. T. Sütz, Prof. R. Reder, Nina Holzinger, Konstantin Frank, David Andraschko
+1.0, 2020-03-15
+:sourcedir: ../src/main/java
+:icons: font
+:toc: left
+
+== Datenbank
+
+Uns wurde empfohlen, beim validieren der Daten, mit logs zu arbeiten. (z.B.
+logging.error,logging.info)
+
+== Use-Case Diagram
+
+zu ändernde Use-Cases
+
+* Zeitgesteuertes deaktivieren des Überwachungssystem
+* Historie des Alarmierungen
+* Include beim Deaktivieren des Alarms ist falsch
+
+== Youtrack
+
+zu ändernde User-Storys
+
+* Wasseroberfläche überwachen
+* Alarmierung im Fehlverhalten einsehen
+* Watchdog integrieren
+* Daten in eine Cloud auslagern
+
+Unterscheidung zwischen "Daten zum MQTT Broker senden" und "Beim MQTT Broker subscriben"
+deutlich machen.
+
+== Systemarchitektur
+
+* Docker am RPI aufsetzen
+* Cloud basiert? (Quarkus, DB)
+* Watchdog integrieren
+
+image::../asciidocs/images/sysarch_mom_10-02-20.JPG[]
+
+== Doc-as-code Pipeline bauen
+
+image::../asciidocs/images/doc_as_code.JPG[]
+
