@@ -1,11 +1,13 @@
 = NETUNUS - Minutes of Meeting
-Nina Holzinger, Konstantin Frank, David Andraschko
 Author: Nina Holzinger, Konstantin Frank
-Attendees: Prof. T. Sütz, Prof. R. Reder, Nina Holzinger, Konstantin Frank, David Andraschko
-1.0, 2020-03-15
 :sourcedir: ../src/main/java
 :icons: font
 :toc: left
+:imagesdir: ../asciidocs/images/
+
+Attendees: Prof. T. Sütz, Prof. R. Reder, Nina Holzinger, Konstantin Frank, David Andraschko
+
+Version 1.0, 10-02-2020
 
 == Datenbank
 
@@ -38,9 +40,13 @@ deutlich machen.
 * Cloud basiert? (Quarkus, DB)
 * Watchdog integrieren
 
-image::../asciidocs/images/sysarch_mom_10-02-20.JPG[]
+image::sysarch_mom_10-02-20.JPG[]
 
 == Doc-as-code Pipeline bauen
 
-image::../asciidocs/images/doc_as_code.JPG[]
+image::doc_as_code.JPG[]
+
+== Jump Back
+
+https://konstantinfrank01.github.io/safer-pool-docs/
 
