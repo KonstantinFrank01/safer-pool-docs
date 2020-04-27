@@ -1,13 +1,12 @@
 = NETUNUS - Minutes of Meeting
-Nina Holzinger, Konstantin Frank, David Andraschko
 Author: Nina Holzinger, Konstantin Frank
-
 :sourcedir: ../src/main/java
 :icons: font
 :toc: left
 
 Attendees: Prof. T. Sütz, Prof. R. Reder, Nina Holzinger, Konstantin Frank, David Andraschko
-1.0, 2020-03-15
+
+Version 1.0, 2020-03-15
 
 == Datenbank
 
