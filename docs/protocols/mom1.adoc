@@ -3,6 +3,7 @@ Author: Nina Holzinger, Konstantin Frank
 :sourcedir: ../src/main/java
 :icons: font
 :toc: left
+:imagesdir: ../asciidocs/images/
 
 Attendees: Prof. T. Sütz, Prof. R. Reder, Nina Holzinger, Konstantin Frank, David Andraschko
 
@@ -39,11 +40,11 @@ deutlich machen.
 * Cloud basiert? (Quarkus, DB)
 * Watchdog integrieren
 
-image::../asciidocs/images/sysarch_mom_10-02-20.JPG[]
+image::sysarch_mom_10-02-20.JPG[]
 
 == Doc-as-code Pipeline bauen
 
-image::../asciidocs/images/doc_as_code.JPG[]
+image::doc_as_code.JPG[]
 
 == Jump Back
 
