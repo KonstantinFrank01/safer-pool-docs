@@ -5,203 +5,32 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 :icons: font
 :toc: left
 
-== Pflichtenheft "Was mache ich"
+== Pflichtenheft
 
-=== Ausgangssituation
+https://konstantinfrank01.github.io/safer-pool-docs/pflichtenheft.html
 
-Im Jahr 2018 wurden etwas mehr als 85.000 Kinder in Österreich geboren.
-Vor allem im Sommer spielen die Kinder, wenn möglich draußen in der Sonne.
-In Österreich gibt es immer mehr Haushalte mit einem Swimming-pool im Garten.
-Laut der Auswertung des Landes Oberösterreich aus dem Jahr 2015 gibt es in etwa 61.000 Pools in Oberösterreich,
-jedoch kann aktuell mit einer höheren Zahl gerechnet werden, da die Zahl stetig steigt.
-Viele Familien genießen ihre heißen Sommertage gemeinsam am Pool und erfreuen sich an der Abkühlung im Nass.
+== Entwurf
 
+https://konstantinfrank01.github.io/safer-pool-docs/entwurf.html
 
-=== Ist-Zustand
+== Projekthandbuch
 
-Es ist fast unmöglich, Kinder lückenlos zu beaufsichtigen, da einen jeder noch so kleine Umstand ablenken kann.
-Beispiele für solche Ablenkungen wären ein Anruf oder auch ein kurzer Gang ins Haus, um etwas zu holen.
+https://konstantinfrank01.github.io/safer-pool-docs/projekthandbuch.html
 
+== Code-Dokumentation
 
-=== Problemstellung
+https://konstantinfrank01.github.io/safer-pool-docs/codedoku.html
 
-Auch wenn die Zeit, in der die Kinder unbeaufsichtigt sind, noch so kurz ist, kann es dadurch sehr schnell zu
-Badeunfällen kommen.
+== Protokolle
 
-
-=== Aufgabenstellung
-
-Es ist ein System zu entwickeln, dass Objekte detektiert, die in den Pool fallen. Das müssen nicht nur Kleinkinder,
-sondern  oder ein Ball, mit dem das Kind gerade spielt sein. Sobald solch eine Detektion durch das System erfolgt
-wird sowohl ein auditiver wie auch visueller Alarm ausgelöst.
-
-Die Detektion kann auch für eine gewisse Zeitdauer deaktiviert werden, wen man schwimmen gehen möchte.
-Nebenbedingungen wie ein Stromausfall, Sensorausfall etc. werden berücksichtigt.
-
-Das aktuell geplante System ist nur als Prototyp geplant, da
-die Sicherheitskontrollen für den tatsächlichen Betrieb noch nicht implementiert wurden.
-
-==== Funktionale Anforderungen
-
-[plantuml]
-----
-@startuml
-skinparam handwritten true
-left to right direction
-actor Poolbesitzer
-actor Objekt
-rectangle NETUNUS{
-    /'Poolbesitzer -- (Bekommt Benachrichtigung)'/
-    Poolbesitzer -- (Alarm quittieren)
-    Poolbesitzer -- (Überwachungssystem zeitgesteuert deaktivieren)
-    Poolbesitzer -- (Historie betrachten)
-    /'(Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>'/
-    (Alarm auslösen) -- Objekt
-}
-@enduml
-----
-
-==== Nichtfunktionale Anforderungen (NFA)
-Die Alarmierung des Systems wird, je nach Poolgröße, so schnell wie möglich erfolgen um die Personen in der Umgebung
-schnellstmöglich zu alarmieren.
-
-Ein Betrieb durch Solarstrom ist bei diesem geringen Verbrauch auszuschließen,
-da man zu viel Zusatz-Material benötigt.
-
-Das System wird leicht zu bedienen und übersichtlich aufgebaut sein.
-
-Außerdem werden alle Daten vergangener Alarme, für berechtigte Personen, jederzeit einsehbar sein.
-
-
-=== Ziele
-
-Das klare Ziel dieser Anwendung ist es Kinder sowie Haustiere vor Badeunfällen zu bewahren.
-
-=== Mengengerüst
-
-Die App wird pro Familie von unterschiedlich vielen Personen genutzt.
-In der Datenbank werden nur die ausgelösten Alarme mit der entsprechenden Uhrzeit gespeichert die der Benutzer über die App einsehen kann.
-Je nach Anzahl der Unfälle/Alarme können das in einem Jahr unterschiedlich viele
-Datenbankeinträge werden, aber da es nicht übermäßig viele und große Daten sind reicht eine kleine Datenbank.
-
-
-== Entwurf "Wie mache ich es"
-
-=== Systemarchitektur
-
-[plantuml]
-----
-@startuml
-skinparam handwritten true
-
-    node "Raspberry PI" {
-        frame docker{
-        [MQTT-Broker]
-        [WebServer]
-        [Quarkus-Server]
-        database "SQLite" {
-        }
-          }
-    }
-node "Sensor + Microcontroller" {
-    [Microcontroller] - [Gyrosensor]
-}
-
-[optischer Sensor]
-[auditiver Sensor]
-[Microcontroller2]
-
-[Microcontroller] --> [MQTT-Broker]
-[Quarkus-Server] <--> [MQTT-Broker]
-[Quarkus-Server] --> SQLite
-[Quarkus-Server] <---> WebServer
-[Microcontroller2] --> [MQTT-Broker]
-[optischer Sensor] -- [Microcontroller2]
-[auditiver Sensor] -- [Microcontroller2]
-@enduml
-----
-
-=== Zustandsdiagramm
-[plantuml]
-----
-@startuml
-
-skinparam handwritten true
-
-[*] --> DetektionAktiv
-state "Detektion aktiv" as DetektionAktiv
-state "Detektion deaktiviert" as DetektionDeaktiv
-state "Alarm aktiv" as AlarmAktiv
-state "Alarm quittiert" as AlarmDeaktiv
-
-DetektionAktiv --> DetektionDeaktiv : Detektion für gewünschte Zeitdauer deaktivieren
-
-
-DetektionAktiv --> Systemausfall : Systemfehler aufgetreten / \n deaktivierung
-DetektionDeaktiv --> Systemausfall : Fehler aufgetreten
-DetektionAktiv --> AlarmAktiv : Unfall detektiert / \n Alarmierung optisch und auditiv
-Systemausfall --> AlarmAktiv : bei jedem Ausfall / \n Alarmierung nur optisch
-AlarmAktiv --> AlarmDeaktiv : Alarm quittieren
-AlarmDeaktiv --> DetektionAktiv : Alarm aktivieren
-@enduml
-----
-
-=== Anwendungsfalldiagramm
-[plantuml]
-----
-@startuml
-skinparam handwritten true
-left to right direction
-actor Poolbesitzer
-actor Objekt
-rectangle NETUNUS{
-    /'Poolbesitzer -- (Bekommt Benachrichtigung)'/
-    Poolbesitzer -- (Alarm quittieren)
-    Poolbesitzer -- (Überwachungssystem zeitgesteuert deaktivieren)
-    Poolbesitzer -- (Historie betrachten)
-    /'(Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>'/
-    (Alarm auslösen) -- Objekt
-}
-@enduml
-----
-
-=== Youtrack-Diagram-Sprints
-image::youtrack-diagram-sprints.png[Youtrack-Diagram-Sprints]
-
-=== Youtrack-Diagram-Epic
-image::youtrack-diagram-epic.png[Youtrack-Diagram-Epic]
-
-
-== Projekthandbuch "Organisatorische Rahmenbedigungen"
-
-=== Youtrack-Diagram-Gantt
-image::youtrack-diagram-gantt.png[Youtrack-Diagram-Gantt]
+https://konstantinfrank01.github.io/safer-pool-docs/protokolle.html
 
 == Projektbezogene Links
 
-=== Github-Development-Repository
-https://github.com/KonstantinFrank01/safer-pool
+https://konstantinfrank01.github.io/safer-pool-docs/links.html
 
-=== Github-Documentation-Repository
-https://github.com/KonstantinFrank01/safer-pool-docs
 
-=== Youtrack
-https://vm81.htl-leonding.ac.at/agiles/99-174/100-836
 
-=== Protocols
 
-Jump to the Protocol from the 10th of February 2020 -> https://konstantinfrank01.github.io/safer-pool-docs/mom1.html
-////
-=== GANTT-Diagramm
-[plantuml,gantt-protoype,png]
-----
-@startuml
-[Deactivate Monitoring] lasts 3 days
-[System Summary] lasts 4 days
-[Get Notified] starts at [System Summary]'s end
-[Get Notified] lasts 4 days
-@enduml
-----
-////
 
 
