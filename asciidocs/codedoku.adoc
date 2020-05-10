@@ -6,7 +6,3 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 :toc: left
 
 == Code-Dokumentation
-
-=== Projektstatus
-
-Hier gehts zum Projektstatus -> https://konstantinfrank01.github.io/safer-pool-docs/projektstatus.html
