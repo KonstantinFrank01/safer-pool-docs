@@ -1,10 +1,16 @@
 = NETUNUS - Pool Safer
 Nina Holzinger, Konstantin Frank, David Andraschko
-1.0, 2020-03-15
+1.0
 :sourcedir: ../src/main/java
 :icons: font
 :toc: left
 
-== Protocols
+== Protokolle
 
-Jump to the Protocol from the 10th of February 2020 -> https://konstantinfrank01.github.io/safer-pool-docs/mom1.html
+Protokoll vom  -> https://konstantinfrank01.github.io/safer-pool-docs/mom1.html
+
+Protokoll vom  -> https://konstantinfrank01.github.io/safer-pool-docs/mom2.html
+
+Protokoll vom  -> https://konstantinfrank01.github.io/safer-pool-docs/mom3.html
+
+Protokoll vom  -> https://konstantinfrank01.github.io/safer-pool-docs/mom4.html
