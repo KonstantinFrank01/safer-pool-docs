@@ -1,6 +1,6 @@
 = NETUNUS - Pool Safer
 Nina Holzinger, Konstantin Frank, David Andraschko
-1.0, 2020-03-15
+1.0
 :sourcedir: ../src/main/java
 :icons: font
 :toc: left
