@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<meta name="author" content="Author: Nina Holzinger, Konstantin Frank">
+<meta name="author" content="Author: David Andraschko, Konstantin Frank">
 <link rel="icon" type="image/png" href="themes/favicon.png">
 <title>NETUNUS - Minutes of Meeting</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -451,134 +451,217 @@ pre.rouge .hll * {
 <div id="header">
 <h1>NETUNUS - Minutes of Meeting</h1>
 <div class="details">
-<span id="author" class="author">Author: Nina Holzinger, Konstantin Frank</span><br>
+<span id="author" class="author">Author: David Andraschko, Konstantin Frank</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_datenbank">1. Datenbank</a></li>
-<li><a href="#_use_case_diagram">2. Use-Case Diagram</a></li>
-<li><a href="#_youtrack">3. Youtrack</a></li>
-<li><a href="#_systemarchitektur">4. Systemarchitektur</a></li>
-<li><a href="#_doc_as_code_pipeline_bauen">5. Doc-as-code Pipeline bauen</a></li>
-<li><a href="#_jump_back">6. Jump Back</a></li>
+<li><a href="#_besprochene_themen">1. Besprochene Themen</a></li>
+<li><a href="#_vereinbarungenempfehlungen">2. Vereinbarungen/Empfehlungen</a>
+<ul class="sectlevel2">
+<li><a href="#_pflichtenheft">2.1. Pflichtenheft</a></li>
+<li><a href="#_use_case_diagram">2.2. Use-Case-Diagram</a></li>
+<li><a href="#_systemarchitektur">2.3. Systemarchitektur</a></li>
+<li><a href="#_zustandsdiagramm">2.4. Zustandsdiagramm</a></li>
+<li><a href="#_gantt_diagramm">2.5. Gantt-Diagramm</a></li>
+<li><a href="#_youtrack">2.6. YouTrack</a></li>
+<li><a href="#_git">2.7. Git</a></li>
+<li><a href="#_was_wir_bis_zum_ende_des_jahres_erledigen">2.8. Was wir bis zum Ende des Jahres erledigen</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
-<p>Attendees: Prof. T. Sütz, Prof. R. Reder, Nina Holzinger, Konstantin Frank, David Andraschko</p>
-</div>
-<div class="paragraph">
-<p>Version 1.0, 10-02-2020</p>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Teilnehmer</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">anwesend</th>
+<th class="tableblock halign-left valign-top">Verteiler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Konstantin Frank</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">David Andraschko</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nina Holzinger</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">T. Stütz</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Ort und Zeit</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discord</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">von-bis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">24.03.2020 - ITP-Einheiten</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dauer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">90 Minuten</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_datenbank"><a class="anchor" href="#_datenbank"></a>1. Datenbank</h2>
+<h2 id="_besprochene_themen"><a class="anchor" href="#_besprochene_themen"></a>1. Besprochene Themen</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Uns wurde empfohlen, beim validieren der Daten, mit logs zu arbeiten. (z.B.
-logging.error,logging.info)</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_use_case_diagram"><a class="anchor" href="#_use_case_diagram"></a>2. Use-Case Diagram</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>zu ändernde Use-Cases</p>
-</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Zeitgesteuertes deaktivieren des Überwachungssystem</p>
+<p>Pflichtenheft</p>
 </li>
 <li>
-<p>Historie des Alarmierungen</p>
+<p>Use-Case-Diagram</p>
 </li>
 <li>
-<p>Include beim Deaktivieren des Alarms ist falsch</p>
+<p>Systemarchitektur</p>
+</li>
+<li>
+<p>Zustandsdiagramm</p>
+</li>
+<li>
+<p>Gantt-Diagramm</p>
+</li>
+<li>
+<p>YouTrack (User Storys)</p>
+</li>
+<li>
+<p>Git</p>
+</li>
+<li>
+<p>Was wir bis zum Ende des Jahres erledigen</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_youtrack"><a class="anchor" href="#_youtrack"></a>3. Youtrack</h2>
+<h2 id="_vereinbarungenempfehlungen"><a class="anchor" href="#_vereinbarungenempfehlungen"></a>2. Vereinbarungen/Empfehlungen</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_pflichtenheft"><a class="anchor" href="#_pflichtenheft"></a>2.1. Pflichtenheft</h3>
 <div class="paragraph">
-<p>zu ändernde User-Storys</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Wasseroberfläche überwachen</p>
-</li>
-<li>
-<p>Alarmierung im Fehlverhalten einsehen</p>
-</li>
-<li>
-<p>Watchdog integrieren</p>
-</li>
-<li>
-<p>Daten in eine Cloud auslagern</p>
-</li>
-</ul>
+<p>Uns wurde empfohlen kürzere Sätze zu formulieren.
+Nebenbedingungen werden nicht erkannt, sondern berücksichtigt.
+Das aktuelle System wird nur als Prototyp geplant, da die Sicherheitskontrollen
+für den tatsächlichen Betrieb noch nicht implementiert werden.
+In den Anforderungen sollen Ausdrücke wie z.B. "Wünschenswert wäre &#8230;&#8203;" unbedingt vermieden werden.
+Performance und Nachhaltigkeit eines Systems sind NFA&#8217;s (Nicht funktionale Anforderungen).
+"nur für den jeweiligen Nutzer" soll umgeschrieben werden auf "für berechtigte Personen".</p>
 </div>
 <div class="paragraph">
-<p>Unterscheidung zwischen "Daten zum MQTT Broker senden" und "Beim MQTT Broker subscriben"
-deutlich machen.</p>
+<p>Nachhaltigkeit kann in unseren Anforderungen weggelassen werden, da ein Menschenleben nicht mit
+zwei AA-Batterien verglichen werden kann.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_systemarchitektur"><a class="anchor" href="#_systemarchitektur"></a>4. Systemarchitektur</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Docker am RPI aufsetzen</p>
-</li>
-<li>
-<p>Cloud basiert? (Quarkus, DB)</p>
-</li>
-<li>
-<p>Watchdog integrieren</p>
-</li>
-</ul>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/sysarch_mom_10-02-20.JPG" alt="sysarch mom 10 02 20">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_doc_as_code_pipeline_bauen"><a class="anchor" href="#_doc_as_code_pipeline_bauen"></a>5. Doc-as-code Pipeline bauen</h2>
-<div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/doc_as_code.JPG" alt="doc as code">
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_jump_back"><a class="anchor" href="#_jump_back"></a>6. Jump Back</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_use_case_diagram"><a class="anchor" href="#_use_case_diagram"></a>2.2. Use-Case-Diagram</h3>
 <div class="paragraph">
-<p><a href="https://konstantinfrank01.github.io/safer-pool-docs/" class="bare">https://konstantinfrank01.github.io/safer-pool-docs/</a></p>
+<p>Der Alarm wird nicht deaktiviert, sondern quittiert. Der Poolsensor löst den Alarm aus.
+Statt Poolbenutzer sollen wir "Objekt in Pool" schreiben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_systemarchitektur"><a class="anchor" href="#_systemarchitektur"></a>2.3. Systemarchitektur</h3>
+<div class="paragraph">
+<p>Zwischen dem MQTT-Broker und dem Quarkus-Server muss eine Verbindung bestehen.
+"old Data" soll in "retrieve Data" umformuliert werden. Zwischen dem Quarkus-Server und der
+Datenbank soll eine normale Linie sein.
+Der MQTT-Broker gehört in das docker-compose.
+Wir sollen uns überlegen, wie man das System lokal laufen lassen kann, also unabhängig vom Internet.
+Es fehlt ein akustisches und ein visuelles Signal. Jedes dieser Signale hat einen eigenen ESP8266 oder wenn möglich einen gemeinsamen.
+Der Webserver greift über eine REST-Schnittstelle auf den Quarkus-Server zu.
+Statt der MariaDB sollen wir eine SQLite Datenbank verwenden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_zustandsdiagramm"><a class="anchor" href="#_zustandsdiagramm"></a>2.4. Zustandsdiagramm</h3>
+<div class="paragraph">
+<p>Es soll Alarm <strong>quittieren</strong> heißen.
+Wir müssen uns im Vorhinein schon Zustände als Ziele definieren, um ein genaues Bild vor Augen zu haben
+wo wir hin wollen.
+Muss es immer der volle Alarm sein? Man könnte ihn in ein akustisches und ein visuelles Signal aufteilen.
+Somit kann man verschiedene Fälle abdecken z.B. Stromausfall = nur akustisches Signal. Der Benutzer kennt sich sofort aus.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gantt_diagramm"><a class="anchor" href="#_gantt_diagramm"></a>2.5. Gantt-Diagramm</h3>
+<div class="paragraph">
+<p>Im Gantt-Diagramm werden die Sprints angezeigt.
+User Storys gehören (auch ohne Tasks) grob bis zum Ende durchgeplant.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_youtrack"><a class="anchor" href="#_youtrack"></a>2.6. YouTrack</h3>
+<div class="paragraph">
+<p>Wir haben zu viel Inhalt im YouTrack. Wir sollen die Sprints bis zum Jahresende durchplanen.
+Zuerst alle User Storys und die die in nächster Zeit erledigt werden müssen mit Tasks noch genauer geplant sein.
+User Storys die erst später erledigt werden müssen vorerst nicht so genaue Tasks haben.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_git"><a class="anchor" href="#_git"></a>2.7. Git</h3>
+<div class="paragraph">
+<p>Am Master-Branch sollen nur Releases sein. Entwickelt wird nur am Developer-Branch.
+Für eine Website soll z.B. ein Feature-Branch erstellt werden.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_was_wir_bis_zum_ende_des_jahres_erledigen"><a class="anchor" href="#_was_wir_bis_zum_ende_des_jahres_erledigen"></a>2.8. Was wir bis zum Ende des Jahres erledigen</h3>
+<div class="paragraph">
+<p>Wir haben vier Use-Cases (Alarm auslösen, Alarm quittieren, Alarm für eine gewisse Zeitdauer deaktivieren, die Historie der Auslöser betrachten).
+Diese Use-Cases sollen wir bis zum Ende des Jahres erledigt haben.</p>
+</div>
+<div class="paragraph">
+<p><strong>Alarm auslösen:</strong>
+Wir sollen auf einer Website mittels Gif etc. angezeigt bekommen, wann ein Alarm ausgelöst werden würde.</p>
+</div>
+<div class="paragraph">
+<p><strong>Alarm quittieren:</strong>
+Mit einem Button auf dieser Website sollen wir den Alarm quittieren können.</p>
+</div>
+<div class="paragraph">
+<p><strong>Alarm für eine gewisse Zeitdauer deaktivieren:</strong>
+Der Alarm kann mit einem weiteren Button auf der Website für z.B. 5 Minuten deaktiviert werden. Jetzt kann der Benutzer schwimmen gehen, ohne, dass ein Alarm ausgelöst wird.</p>
+</div>
+<div class="paragraph">
+<p><strong>Historie der Auslöser betrachten:</strong>
+Der Benutzer kann sich eine Historie der Auslöser in Tabellenform auf der Website anzeigen lassen.</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-27 07:29:43 UTC
+Last updated 2020-05-23 17:40:21 UTC
 </div>
 </div>
 </body>
