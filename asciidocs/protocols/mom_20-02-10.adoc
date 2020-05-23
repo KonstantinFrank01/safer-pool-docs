@@ -7,14 +7,54 @@ Author: Nina Holzinger, Konstantin Frank
 
 Attendees: Prof. T. Sütz, Prof. R. Reder, Nina Holzinger, Konstantin Frank, David Andraschko
 
-Version 1.0, 10-02-2020
+.Teilnehmer
+|===
+|anwesend |Verteiler
 
-== Datenbank
+|Konstantin Frank
+|
+
+|David Andraschko
+|
+
+|Nina Holzinger
+|
+
+|Prof. T. Stütz
+|
+
+|Prof. R. Reder
+|
+|===
+
+.Ort und Zeit
+[cols=2*]
+|===
+|Ort
+|Schule
+
+|von-bis
+|10.02.2020 - ITP-Unterricht
+|Dauer
+|30-40 Minuten
+|===
+
+== Besprochene Themen
+
+* Datenbank
+* Use-Case Diagramm
+* Youtrack
+* Systemarchitektur
+* Doc-as-code Pipeline
+
+== Vereinbarungen/Empfehlungen
+
+=== Datenbank
 
 Uns wurde empfohlen, beim validieren der Daten, mit logs zu arbeiten. (z.B.
 logging.error,logging.info)
 
-== Use-Case Diagram
+=== Use-Case Diagram
 
 zu ändernde Use-Cases
 
@@ -22,7 +62,7 @@ zu ändernde Use-Cases
 * Historie des Alarmierungen
 * Include beim Deaktivieren des Alarms ist falsch
 
-== Youtrack
+=== Youtrack
 
 zu ändernde User-Storys
 
@@ -34,7 +74,7 @@ zu ändernde User-Storys
 Unterscheidung zwischen "Daten zum MQTT Broker senden" und "Beim MQTT Broker subscriben"
 deutlich machen.
 
-== Systemarchitektur
+=== Systemarchitektur
 
 * Docker am RPI aufsetzen
 * Cloud basiert? (Quarkus, DB)
@@ -42,11 +82,11 @@ deutlich machen.
 
 image::sysarch_mom_10-02-20.JPG[]
 
-== Doc-as-code Pipeline bauen
+=== Doc-as-code Pipeline bauen
 
 image::doc_as_code.JPG[]
 
-== Jump Back
+==== Jump Back
 
-https://konstantinfrank01.github.io/safer-pool-docs/
+https://konstantinfrank01.github.io/safer-pool-docs/protokolle.html
 
