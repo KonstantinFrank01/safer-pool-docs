@@ -7,12 +7,11 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 
 == Protokolle
 
-Protokoll vom 10.02.2020  -> https://konstantinfrank01.github.io/safer-pool-docs/mom1.html
+Protokoll vom 10.02.2020  -> https://konstantinfrank01.github.io/safer-pool-docs/mom_20-02-10.html
 
-Protokoll vom 13.03.2020  -> https://konstantinfrank01.github.io/safer-pool-docs/mom2.html
+Protokoll vom 13.03.2020  -> https://konstantinfrank01.github.io/safer-pool-docs/mom_20-03-13.html
 
-Protokoll vom 24.03.2020  -> https://konstantinfrank01.github.io/safer-pool-docs/mom3.html
+Protokoll vom 24.03.2020  -> https://konstantinfrank01.github.io/safer-pool-docs/mom_20-03-24.html
 
-Protokoll vom 30.03.2020 -> https://konstantinfrank01.github.io/safer-pool-docs/mom3.html
+Protokoll vom 30.03.2020 -> https://konstantinfrank01.github.io/safer-pool-docs/mom20_03_30.html
 
-Protokoll vom  -> https://konstantinfrank01.github.io/safer-pool-docs/mom4.html
