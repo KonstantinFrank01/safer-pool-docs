@@ -19,7 +19,7 @@ skinparam handwritten true
         [MQTT-Broker]
         [WebServer]
         [Quarkus-Server]
-        database "SQLite" {
+        database "MariaDB" {
         }
           }
     }
@@ -27,17 +27,17 @@ node "Sensor + Microcontroller" {
     [Microcontroller] - [Gyrosensor]
 }
 
-[optischer Sensor]
-[auditiver Sensor]
+[optischer Aktor]
+[auditiver Aktor]
 [Microcontroller2]
 
-[Microcontroller] --> [MQTT-Broker]
-[Quarkus-Server] <--> [MQTT-Broker]
-[Quarkus-Server] --> SQLite
-[Quarkus-Server] <---> WebServer
+[Microcontroller] --> [MQTT-Broker] : <<MQTT-Protokoll>>
+[Quarkus-Server] <--> [MQTT-Broker] : <<MQTT-Protokoll>>
+[Quarkus-Server] --> MariaDB
+[Quarkus-Server] <---> WebServer : <<HTTP/REST>>
 [Microcontroller2] --> [MQTT-Broker]
-[optischer Sensor] -- [Microcontroller2]
-[auditiver Sensor] -- [Microcontroller2]
+[optischer Aktor] -- [Microcontroller2]
+[auditiver Aktor] -- [Microcontroller2]
 @enduml
 ----
 

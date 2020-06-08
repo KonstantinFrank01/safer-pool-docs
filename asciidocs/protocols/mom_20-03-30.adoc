@@ -40,7 +40,7 @@ Author: David Andraschko, Konstantin Frank
 * Anwendungsfalldiagramm
 * YouTrack-Diagramm
 
-== Vereinbarungen
+== Vereinbarungen/Empfehlungen
 
 === Zustandsdiagramm
 
