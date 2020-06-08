@@ -18,7 +18,7 @@ Author: David Andraschko, Konstantin Frank
 |Nina Holzinger
 |
 
-|T. Stütz
+|Prof. T. Stütz
 |
 |===
 
@@ -37,7 +37,7 @@ Author: David Andraschko, Konstantin Frank
 == Besprochene Themen
 
 * Pflichtenheft
-* Use-Case-Diagram
+* Anwendungsfalldiagramm
 * Systemarchitektur
 * Zustandsdiagramm
 * Gantt-Diagramm
@@ -60,7 +60,7 @@ Performance und Nachhaltigkeit eines Systems sind NFA's (Nicht funktionale Anfor
 Nachhaltigkeit kann in unseren Anforderungen weggelassen werden, da ein Menschenleben nicht mit
 zwei AA-Batterien verglichen werden kann.
 
-=== Use-Case-Diagram
+=== Anwendungsfalldiagramm
 
 Der Alarm wird nicht deaktiviert, sondern quittiert. Der Poolsensor löst den Alarm aus.
 Statt Poolbenutzer sollen wir "Objekt in Pool" schreiben.
@@ -89,7 +89,7 @@ Somit kann man verschiedene Fälle abdecken z.B. Stromausfall = nur akustisches 
 Im Gantt-Diagramm werden die Sprints angezeigt.
 User Storys gehören (auch ohne Tasks) grob bis zum Ende durchgeplant.
 
-=== YouTrack
+=== YouTrack (User Storys)
 
 Wir haben zu viel Inhalt im YouTrack. Wir sollen die Sprints bis zum Jahresende durchplanen.
 Zuerst alle User Storys und die die in nächster Zeit erledigt werden müssen mit Tasks noch genauer geplant sein.

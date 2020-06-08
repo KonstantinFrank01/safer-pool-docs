@@ -18,7 +18,7 @@ Author: David Andraschko, Konstantin Frank
 |Nina Holzinger
 |
 
-|T. Stütz
+|Prof. T. Stütz
 |
 |===
 
@@ -38,11 +38,11 @@ Author: David Andraschko, Konstantin Frank
 
 * Zustandsdiagramm
 * Anwendungsfalldiagramm
-* Youtrack-Diagram
+* YouTrack-Diagramm
 
 == Vereinbarungen
 
-* Zustandsdiagramm
+=== Zustandsdiagramm
 
 Bei "Systemfehler aufgetreten", muss ein Zeilenumbruch eingefügt werden.
 Bei einem Systemausfall soll nur ein visueller Alarm ausgelöst werden.
@@ -51,10 +51,10 @@ einen ganz andere Bedeutung hat.
 Nach einer System deaktivierung kann man das System nicht mehr aktivieren, auch das soll geändert
 werden.
 
-* Anwendungsfalldiagramm
+=== Anwendungsfalldiagramm
 
 Sieht gut aus.
 
-* Youtrack-Diagram
+=== Youtrack-Diagramm
 
 Sieht gut aus.

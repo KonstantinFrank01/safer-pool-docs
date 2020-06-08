@@ -42,8 +42,8 @@ Attendees: Prof. T. Sütz, Prof. R. Reder, Nina Holzinger, Konstantin Frank, Dav
 == Besprochene Themen
 
 * Datenbank
-* Use-Case Diagramm
-* Youtrack
+* Anwendungsfalldiagramm
+* YouTrack
 * Systemarchitektur
 * Doc-as-code Pipeline
 
@@ -54,7 +54,7 @@ Attendees: Prof. T. Sütz, Prof. R. Reder, Nina Holzinger, Konstantin Frank, Dav
 Uns wurde empfohlen, beim validieren der Daten, mit logs zu arbeiten. (z.B.
 logging.error,logging.info)
 
-=== Use-Case Diagram
+=== Anwendungsfalldiagramm
 
 zu ändernde Use-Cases
 
@@ -62,7 +62,7 @@ zu ändernde Use-Cases
 * Historie des Alarmierungen
 * Include beim Deaktivieren des Alarms ist falsch
 
-=== Youtrack
+=== YouTrack
 
 zu ändernde User-Storys
 

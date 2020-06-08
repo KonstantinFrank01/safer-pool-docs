@@ -15,7 +15,7 @@ Author: David Andraschko, Konstantin Frank
 |David Andraschko
 |
 
-|T. Stütz
+|Prof. T. Stütz
 |
 |===
 
@@ -35,7 +35,7 @@ Author: David Andraschko, Konstantin Frank
 
 * Watchdog
 
-== Vereinbarungen
+== Vereinbarungen/Empfehlungen
 
 Als Watchdog würde eine periodische Anfrage, ob der Server noch erreichbar ist, reichen.
 Diese Anfrage würde in etwa alle 5 Minuten geschickt werden, wenn nicht wird ein
