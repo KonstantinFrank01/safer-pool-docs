@@ -459,9 +459,9 @@ pre.rouge .hll * {
 <li><a href="#_besprochene_themen">1. Besprochene Themen</a></li>
 <li><a href="#_vereinbarungenempfehlungen">2. Vereinbarungen/Empfehlungen</a>
 <ul class="sectlevel2">
-<li><a href="#_zustandsdiagramm">2.1. Zustandsdiagramm</a></li>
-<li><a href="#_anwendungsfalldiagramm">2.2. Anwendungsfalldiagramm</a></li>
-<li><a href="#_youtrack_diagramm">2.3. Youtrack-Diagramm</a></li>
+<li><a href="#_gui">2.1. GUI</a></li>
+<li><a href="#_film">2.2. Film</a></li>
+<li><a href="#_dockerlogging">2.3. Docker/Logging</a></li>
 </ul>
 </li>
 </ul>
@@ -499,6 +499,10 @@ pre.rouge .hll * {
 <td class="tableblock halign-left valign-top"><p class="tableblock">Prof. T. Stütz</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prof. R. Reder</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 <table class="tableblock frame-all grid-all stretch">
@@ -514,7 +518,7 @@ pre.rouge .hll * {
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">von-bis</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">30.03.2020 - ITP-Einheiten</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">25.05.2020 - ITP-Einheiten</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Dauer</p></td>
@@ -530,13 +534,13 @@ pre.rouge .hll * {
 <div class="ulist">
 <ul>
 <li>
-<p>Zustandsdiagramm</p>
+<p>GUI</p>
 </li>
 <li>
-<p>Anwendungsfalldiagramm</p>
+<p>Film</p>
 </li>
 <li>
-<p>YouTrack-Diagramm</p>
+<p>Docker/Logging</p>
 </li>
 </ul>
 </div>
@@ -546,26 +550,31 @@ pre.rouge .hll * {
 <h2 id="_vereinbarungenempfehlungen"><a class="anchor" href="#_vereinbarungenempfehlungen"></a>2. Vereinbarungen/Empfehlungen</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_zustandsdiagramm"><a class="anchor" href="#_zustandsdiagramm"></a>2.1. Zustandsdiagramm</h3>
+<h3 id="_gui"><a class="anchor" href="#_gui"></a>2.1. GUI</h3>
 <div class="paragraph">
-<p>Bei "Systemfehler aufgetreten", muss ein Zeilenumbruch eingefügt werden.
-Bei einem Systemausfall soll nur ein visueller Alarm ausgelöst werden.
-Es soll "Alarm quittiert" heißen und nicht "Alarm ausgeschaltet", da "Alarm ausgeschaltet"
-einen ganz andere Bedeutung hat.
-Nach einer System deaktivierung kann man das System nicht mehr aktivieren, auch das soll geändert
-werden.</p>
+<p>Wir sollten eigenen Buttons für 15 Minuten/30 Minuten/45 Minuten statt dem Eingabefeld erstellen.
+Der Status (Icon) soll gelb sein, wenn die Aufsichtsperson schwimmen ist.
+Statt dem Wort "Überwachung" wäre es besser, wenn wir "Schutz" schreiben.
+Der Countdown solls schön groß und gut ersichtlich sein.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_anwendungsfalldiagramm"><a class="anchor" href="#_anwendungsfalldiagramm"></a>2.2. Anwendungsfalldiagramm</h3>
+<h3 id="_film"><a class="anchor" href="#_film"></a>2.2. Film</h3>
 <div class="paragraph">
-<p>Sieht gut aus.</p>
+<p>Wir sollen einen Film für das Projekt erstellen.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://youtu.be/01mW_kXN6ko" class="bare">https://youtu.be/01mW_kXN6ko</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_youtrack_diagramm"><a class="anchor" href="#_youtrack_diagramm"></a>2.3. Youtrack-Diagramm</h3>
+<h3 id="_dockerlogging"><a class="anchor" href="#_dockerlogging"></a>2.3. Docker/Logging</h3>
 <div class="paragraph">
-<p>Sieht gut aus.</p>
+<p>Es wäre super, wenn wir einen MiniClient erstellen, der alle MQTT-Messages mitloggt. z.B. mittels RollingLog
+(z.B. 3 Files mit je 10kB, nach dem 3. File löscht sich das erste und ein neues leeres wird erstellt).</p>
+</div>
+<div class="paragraph">
+<p>Die verschiedenen Komponenten unseres Projektes (MQTT-Server, DB, &#8230;&#8203;) sollen in eigenen Docker-Containern laufen.</p>
 </div>
 </div>
 </div>
@@ -573,7 +582,7 @@ werden.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-06-08 06:52:19 UTC
+Last updated 2020-06-08 07:01:21 UTC
 </div>
 </div>
 </body>
