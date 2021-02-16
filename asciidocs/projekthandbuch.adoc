@@ -7,8 +7,12 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 
 == Projekthandbuch "Organisatorische Rahmenbedigungen"
 
+
+////
 === Youtrack-Diagram-Gantt
 image::youtrack-diagram-gantt.png[Youtrack-Diagram-Gantt]
+////
+
 
 ////
 === GANTT-Diagramm
