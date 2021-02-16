@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.10">
-<meta name="author" content="Nina Holzinger, Konstantin Frank, David Andraschko">
+<meta name="author" content="Author: Konstantin Frank">
 <link rel="icon" type="image/png" href="themes/favicon.png">
-<title>NETUNUS - Pool Safer</title>
+<title>NETUNUS - Minutes of Meeting</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -449,29 +449,153 @@ pre.rouge .hll * {
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>NETUNUS - Pool Safer</h1>
+<h1>NETUNUS - Minutes of Meeting</h1>
 <div class="details">
-<span id="author" class="author">Nina Holzinger, Konstantin Frank, David Andraschko</span><br>
-<span id="revdate">1.0</span>
+<span id="author" class="author">Author: Konstantin Frank</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_projekthandbuch_organisatorische_rahmenbedigungen">1. Projekthandbuch "Organisatorische Rahmenbedigungen"</a></li>
+<li><a href="#_besprochene_themen">1. Besprochene Themen</a></li>
+<li><a href="#_vereinbarungenempfehlungen">2. Vereinbarungen/Empfehlungen</a>
+<ul class="sectlevel2">
+<li><a href="#_projekt_organisation">2.1. Projekt Organisation</a></li>
+<li><a href="#_cloud_computing">2.2. Cloud Computing</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div id="content">
-<div class="sect1">
-<h2 id="_projekthandbuch_organisatorische_rahmenbedigungen"><a class="anchor" href="#_projekthandbuch_organisatorische_rahmenbedigungen"></a>1. Projekthandbuch "Organisatorische Rahmenbedigungen"</h2>
+<div id="preamble">
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>Attendees: Prof. C. Aberger, Nina Holzinger, Konstantin Frank, David Andraschko</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Teilnehmer</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">anwesend</th>
+<th class="tableblock halign-left valign-top">Verteiler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Konstantin Frank</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">David Andraschko</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nina Holzinger</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prof. C. Aberger</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Ort und Zeit</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ort</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discord</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">von-bis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">02.02.2021 - Discord-Meeting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dauer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">20 Minuten</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_besprochene_themen"><a class="anchor" href="#_besprochene_themen"></a>1. Besprochene Themen</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Projekt Organisation</p>
+</li>
+<li>
+<p>Cloud-Computing</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_vereinbarungenempfehlungen"><a class="anchor" href="#_vereinbarungenempfehlungen"></a>2. Vereinbarungen/Empfehlungen</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_projekt_organisation"><a class="anchor" href="#_projekt_organisation"></a>2.1. Projekt Organisation</h3>
+<div class="paragraph">
+<p>Uns wurde empfohlen, dass wir eine sauber strukturierte Projektorganisation mit dem Tool
+GitHub-Projects umsetzen sollen.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cloud_computing"><a class="anchor" href="#_cloud_computing"></a>2.2. Cloud Computing</h3>
+<div class="paragraph">
+<p>Um die Komponenten, die aktuell in einem docker-compose-file zusammengefasst sind, im Minikube
+laufen lassen zu können müssen diese Komponenten auf individuelle .yaml-Dateien aufgeteilt werden.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Wer</th>
+<th class="tableblock halign-left valign-top">Was</th>
+<th class="tableblock halign-left valign-top">Bis Wann</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Konstantin Frank</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Projekt Organisation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16.2.21</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">David Andraschko, Konstantin Frank, Nina Holzinger</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Computing</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16.2.21</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_jump_back"><a class="anchor" href="#_jump_back"></a>2.2.1. Jump Back</h4>
+<div class="paragraph">
+<p><a href="https://konstantinfrank01.github.io/safer-pool-docs/protokolle.html" class="bare">https://konstantinfrank01.github.io/safer-pool-docs/protokolle.html</a></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-02-16 07:27:54 UTC
+Last updated 2021-02-16 08:39:11 UTC
 </div>
 </div>
 </body>
