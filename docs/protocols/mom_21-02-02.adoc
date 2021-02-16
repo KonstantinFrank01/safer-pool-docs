@@ -32,7 +32,7 @@ Attendees: Prof. C. Aberger, Nina Holzinger, Konstantin Frank, David Andraschko
 |Discord
 
 |von-bis
-|02.02.2021 - Discord-Meeting
+|02.02.2021 - ITP Unterricht
 |Dauer
 |20 Minuten
 |===
