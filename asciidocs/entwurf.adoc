@@ -85,8 +85,11 @@ rectangle NETUNUS{
 @enduml
 ----
 
+
+////
 === Youtrack-Diagram-Sprints
 image::youtrack-diagram-sprints.png[Youtrack-Diagram-Sprints]
 
 === Youtrack-Diagram-Epic
-image::youtrack-diagram-epic.png[Youtrack-Diagram-Epic]
+image::youtrack-diagram-epic.png[Youtrack-Diagram-Epic]////
+
