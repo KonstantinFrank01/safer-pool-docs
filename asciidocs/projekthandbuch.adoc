@@ -9,8 +9,9 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 
 === Auftraggeber
 
-Der Auftraggeber des Projekts ist die HTBLA Leonding. Die Betreuer
-dieses Schulprojekts sind Prof. Thomas Stütz und Prof. Christian Aberger.
+Der Auftraggeber des Projekts ist die HTBLA Leonding, insbesondere Prof. Robert Reder.
+Die Betreuer dieses Schulprojekts sind Prof. Thomas Stütz und
+Prof. Christian Aberger.
 
 === Projektteam
 
@@ -25,7 +26,7 @@ Das Projektteam besteht aus Nina Holzinger, David Andraschko und Konstantin Fran
 * Microcontroller-Programmierung
 * Frontend-Programmierung
 
-image::konstantin-frank.jpg[Konstantin Frank]
+image::konstantin-frank.jpg[Konstantin Frank, width="200px", height="650px"]
 
 ==== Nina Holzinger
 
@@ -33,6 +34,9 @@ image::konstantin-frank.jpg[Konstantin Frank]
 
 * Backend-Programmierung
 * Frontend-Programmierung
+* Microcontroller-Programmierung
+
+image::nina-holzinger.jpg[Nina Holzinger, width="200px", height="650px"]
 
 ==== David Andraschko
 
@@ -41,6 +45,8 @@ image::konstantin-frank.jpg[Konstantin Frank]
 * Microcontroller-Programmierung
 * Hardware
 * Frontend-Programmierung
+
+image::david-andraschko.jpg[David Andraschko, width="200px", height="650px"]
 
 ////
 === Youtrack-Diagram-Gantt
