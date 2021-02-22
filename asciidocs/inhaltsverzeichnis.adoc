@@ -46,10 +46,9 @@ https://konstantinfrank01.github.io/safer-pool-docs/projektstatus.html
 
 == GitHub Repository
 
-https://konstantinfrank01.github.io/safer-pool-docs/links.html[Einen Blick in die Repos werfen]
+include::https://konstantinfrank01.github.io/safer-pool-docs/links.html[Einen Blick in die Repos werfen]
 
-
-
+https://konstantinfrank01.github.io/safer-pool-docs/index.html[Zurück an den Start]
 
 
 
