@@ -19,16 +19,19 @@ dann löst unser System einen akustischen und visuellen Alarm aus.
 Damit soll sichergestellt werden, dass möglichst schnell geholfen werden kann.
 
 == Projektvideos
+=== Kurzfassung
 
-*Kurzfassung - Was ist Netunus? Wofür wird es verwendet?*
+*Was ist Netunus? Wofür wird es verwendet?*
 
 video::p5PX3PFFbJc[youtube, width="800px", height="400px"]
 
-*Extended Version - Technische Umsetzung, Anwendungsfälle, Projektteam etc.*
+=== Extended Version
+
+*Technische Umsetzung, Anwendungsfälle, Projektteam, ...*
 
 video::2SgHfNun2m4[youtube, width="800px", height="400px"]
 
-== Neugierig geworden?
+== Neugierig geworden
 
 include::https://konstantinfrank01.github.io/safer-pool-docs/inhaltsverzeichnis.html[Wirf einen Blick in unsere Doku]
 
