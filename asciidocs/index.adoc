@@ -5,17 +5,27 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 :icons: font
 :toc: left
 
+== Projektvideos
+
+Kurzfassung - Was ist Netunus? Wofür wird es verwendet?
+
+video::p5PX3PFFbJc[youtube]
+
+Extended Version - Technische Umsetzung, Anwendungsfälle, Projektteam etc.
+
+video::2SgHfNun2m4[youtube]
+
 == Pflichtenheft
 
-https://konstantinfrank01.github.io/safer-pool-docs/pflichtenheft.html
+include::https://konstantinfrank01.github.io/safer-pool-docs/pflichtenheft.html[Hier gehts zum Pflichtenheft]
 
 == Entwurf
 
-https://konstantinfrank01.github.io/safer-pool-docs/entwurf.html
+include::https://konstantinfrank01.github.io/safer-pool-docs/entwurf.html[Am Entwurf interessiert?]
 
 == Projekthandbuch
 
-https://konstantinfrank01.github.io/safer-pool-docs/projekthandbuch.html
+include::https://konstantinfrank01.github.io/safer-pool-docs/projekthandbuch.html[Das Projekthandbuch ansehen]
 
 
 ////
@@ -27,11 +37,15 @@ https://konstantinfrank01.github.io/safer-pool-docs/codedoku.html
 
 == Protokolle
 
-https://konstantinfrank01.github.io/safer-pool-docs/protokolle.html
+include::https://konstantinfrank01.github.io/safer-pool-docs/protokolle.html[Ich will die Protokolle sehen!]
 
+
+////
 == Film
 
 https://www.youtube.com/watch?v=p5PX3PFFbJc
+////
+
 
 ////
 == Projektstatus
@@ -40,9 +54,9 @@ https://konstantinfrank01.github.io/safer-pool-docs/projektstatus.html
 ////
 
 
-== Projektbezogene Links
+== GitHub Repository
 
-https://konstantinfrank01.github.io/safer-pool-docs/links.html
+https://konstantinfrank01.github.io/safer-pool-docs/links.html[Einen Blick in die Repos werfen]
 
 
 
