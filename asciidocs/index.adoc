@@ -7,13 +7,13 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 
 == Projektvideos
 
-Kurzfassung - Was ist Netunus? Wofür wird es verwendet?
+*Kurzfassung - Was ist Netunus? Wofür wird es verwendet?*
 
-video::p5PX3PFFbJc[youtube, width="800px"]
+video::p5PX3PFFbJc[youtube, width="800px", height="400px"]
 
-Extended Version - Technische Umsetzung, Anwendungsfälle, Projektteam etc.
+*Extended Version - Technische Umsetzung, Anwendungsfälle, Projektteam etc.*
 
-video::2SgHfNun2m4[youtube, width="800px"]
+video::2SgHfNun2m4[youtube, width="800px", height="400px"]
 
 == Pflichtenheft
 
