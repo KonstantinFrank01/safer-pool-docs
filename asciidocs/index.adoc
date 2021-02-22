@@ -5,6 +5,19 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 :icons: font
 :toc: left
 
+== Abstract
+
+Die Anzahl an Pools in privaten Haushalten steigt immer mehr.
+Vielleicht haben ja auch Sie einen Pool zu Hause.
+Dabei gibt es leider nur ein großes Problem, und zwar die Beaufsichtigung von Kleinkindern
+und Haustieren. Es ist praktisch unmöglich die ganze Zeit aufzupassen,
+dadurch entstehen leider immer häufiger Badeunfälle.
+
+Um dies zu verhindern entwicklen wir ein System,
+welches Badeunfälle verhindern soll. Fällt ein Kind oder ein Tier in den Pool,
+dann löst unser System einen akustischen und visuellen Alarm aus.
+Damit soll sichergestellt werden, dass möglichst schnell geholfen werden kann.
+
 == Projektvideos
 
 *Kurzfassung - Was ist Netunus? Wofür wird es verwendet?*
@@ -15,51 +28,7 @@ video::p5PX3PFFbJc[youtube, width="800px", height="400px"]
 
 video::2SgHfNun2m4[youtube, width="800px", height="400px"]
 
-== Pflichtenheft
+== Neugierig geworden?
 
-include::https://konstantinfrank01.github.io/safer-pool-docs/pflichtenheft.html[Hier gehts zum Pflichtenheft]
-
-== Entwurf
-
-include::https://konstantinfrank01.github.io/safer-pool-docs/entwurf.html[Am Entwurf interessiert?]
-
-== Projekthandbuch
-
-include::https://konstantinfrank01.github.io/safer-pool-docs/projekthandbuch.html[Das Projekthandbuch ansehen]
-
-
-////
-== Code-Dokumentation
-
-https://konstantinfrank01.github.io/safer-pool-docs/codedoku.html
-////
-
-
-== Protokolle
-
-include::https://konstantinfrank01.github.io/safer-pool-docs/protokolle.html[Ich will die Protokolle sehen!]
-
-
-////
-== Film
-
-https://www.youtube.com/watch?v=p5PX3PFFbJc
-////
-
-
-////
-== Projektstatus
-
-https://konstantinfrank01.github.io/safer-pool-docs/projektstatus.html
-////
-
-
-== GitHub Repository
-
-https://konstantinfrank01.github.io/safer-pool-docs/links.html[Einen Blick in die Repos werfen]
-
-
-
-
-
+include::https://konstantinfrank01.github.io/safer-pool-docs/inhaltsverzeichnis.html[Wirf einen Blick in unsere Doku]
 
