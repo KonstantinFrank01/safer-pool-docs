@@ -1,0 +1,95 @@
+= NETUNUS - Pool Safer
+Nina Holzinger, Konstantin Frank, David Andraschko
+1.0
+:sourcedir: ../src/main/java
+:icons: font
+:toc: left
+
+== Entwurf "Wie mache ich es"
+
+=== Systemarchitektur
+
+[plantuml]
+----
+@startuml
+skinparam handwritten true
+
+    node "Raspberry PI" {
+        frame docker{
+        [MQTT-Broker]
+        [WebServer]
+        [Quarkus-Server]
+        database "MariaDB" {
+        }
+          }
+    }
+node "Sensor + Microcontroller" {
+    [Microcontroller] - [Gyrosensor]
+}
+
+[optischer Aktor]
+[auditiver Aktor]
+[Microcontroller2]
+
+[Microcontroller] --> [MQTT-Broker] : <<MQTT-Protokoll>>
+[Quarkus-Server] <--> [MQTT-Broker] : <<MQTT-Protokoll>>
+[Quarkus-Server] --> MariaDB
+[Quarkus-Server] <---> WebServer : <<HTTP/REST>>
+[Microcontroller2] --> [MQTT-Broker]
+[optischer Aktor] -- [Microcontroller2]
+[auditiver Aktor] -- [Microcontroller2]
+@enduml
+----
+
+=== Zustandsdiagramm
+[plantuml]
+----
+@startuml
+
+skinparam handwritten true
+
+[*] --> DetektionAktiv
+state "Detektion aktiv" as DetektionAktiv
+state "Detektion deaktiviert" as DetektionDeaktiv
+state "Alarm aktiv" as AlarmAktiv
+state "Alarm quittiert" as AlarmDeaktiv
+
+DetektionAktiv --> DetektionDeaktiv : Detektion für gewünschte Zeitdauer deaktivieren
+
+
+DetektionAktiv --> Systemausfall : Systemfehler aufgetreten / \n deaktivierung
+DetektionDeaktiv --> Systemausfall : Fehler aufgetreten
+DetektionAktiv --> AlarmAktiv : Unfall detektiert / \n Alarmierung optisch und auditiv
+Systemausfall --> AlarmAktiv : bei jedem Ausfall / \n Alarmierung nur optisch
+AlarmAktiv --> AlarmDeaktiv : Alarm quittieren
+AlarmDeaktiv --> DetektionAktiv : Alarm aktivieren
+@enduml
+----
+
+=== Anwendungsfalldiagramm
+[plantuml]
+----
+@startuml
+skinparam handwritten true
+left to right direction
+actor Poolbesitzer
+actor Objekt
+rectangle NETUNUS{
+    /'Poolbesitzer -- (Bekommt Benachrichtigung)'/
+    Poolbesitzer -- (Alarm quittieren)
+    Poolbesitzer -- (Überwachungssystem zeitgesteuert deaktivieren)
+    Poolbesitzer -- (Historie betrachten)
+    /'(Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>'/
+    (Alarm auslösen) -- Objekt
+}
+@enduml
+----
+
+
+////
+=== Youtrack-Diagram-Sprints
+image::youtrack-diagram-sprints.png[Youtrack-Diagram-Sprints]
+
+=== Youtrack-Diagram-Epic
+image::youtrack-diagram-epic.png[Youtrack-Diagram-Epic]////
+

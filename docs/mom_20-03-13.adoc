@@ -1,0 +1,44 @@
+= NETUNUS - Minutes of Meeting
+Author: David Andraschko, Konstantin Frank
+:sourcedir: ../src/main/java
+:icons: font
+:toc: left
+:imagesdir: ../asciidocs/images/
+
+.Teilnehmer
+|===
+|anwesend |Verteiler
+
+|Konstantin Frank
+|
+
+|David Andraschko
+|
+
+|Prof. T. Stütz
+|
+|===
+
+.Ort und Zeit
+[cols=2*]
+|===
+|Ort
+|Schule
+
+|von-bis
+|13.03.2020 - 5min Pause der SEW-Einheiten
+|Dauer
+|5 Minuten
+|===
+
+== Besprochene Themen
+
+* Watchdog
+
+== Vereinbarungen/Empfehlungen
+
+Als Watchdog würde eine periodische Anfrage, ob der Server noch erreichbar ist, reichen.
+Diese Anfrage würde in etwa alle 5 Minuten geschickt werden, wenn nicht wird ein
+visueller Alarm ausgelöst.
+
+

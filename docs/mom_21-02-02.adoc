@@ -1,0 +1,73 @@
+= NETUNUS - Minutes of Meeting
+Author: Konstantin Frank
+:sourcedir: ../src/main/java
+:icons: font
+:toc: left
+:imagesdir: ../asciidocs/images/
+
+Attendees: Prof. C. Aberger, Nina Holzinger, Konstantin Frank, David Andraschko
+
+.Teilnehmer
+|===
+|anwesend |Verteiler
+
+|Konstantin Frank
+|
+
+|David Andraschko
+|
+
+|Nina Holzinger
+|
+
+|Prof. C. Aberger
+|
+
+|===
+
+.Ort und Zeit
+[cols=2*]
+|===
+|Ort
+|Discord
+
+|von-bis
+|02.02.2021 - ITP Unterricht
+|Dauer
+|20 Minuten
+|===
+
+== Besprochene Themen
+
+* Projekt Organisation
+* Cloud-Computing
+
+== Vereinbarungen/Empfehlungen
+
+=== Projekt Organisation
+
+Uns wurde empfohlen, dass wir eine sauber strukturierte Projektorganisation mit dem Tool
+GitHub-Projects umsetzen sollen.
+
+=== Cloud Computing
+
+Um die Komponenten, die aktuell in einem docker-compose-file zusammengefasst sind, im Minikube
+laufen lassen zu können müssen diese Komponenten auf individuelle .yaml-Dateien aufgeteilt werden.
+
+|===
+|Wer |Was |Bis Wann
+
+|Konstantin Frank
+|Projekt Organisation
+|16.2.21
+
+|David Andraschko, Konstantin Frank, Nina Holzinger
+|Cloud Computing
+|16.2.21
+
+|===
+
+==== Jump Back
+
+https://konstantinfrank01.github.io/safer-pool-docs/protokolle.html
+
