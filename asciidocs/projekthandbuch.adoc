@@ -7,6 +7,40 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 
 == Projekthandbuch "Organisatorische Rahmenbedigungen"
 
+=== Auftraggeber
+
+Der Auftraggeber des Projekts ist die HTBLA Leonding. Die Betreuer
+dieses Schulprojekts sind Prof. Thomas Stütz und Prof. Christian Aberger.
+
+=== Projektteam
+
+Das Projektteam besteht aus Nina Holzinger, David Andraschko und Konstantin Frank.
+
+==== Konstantin Frank
+
+*Verantwortlichkeiten*
+
+* Projektleiter
+* Organisation
+* Microcontroller-Programmierung
+* Frontend-Programmierung
+
+image::konstantin-frank.jpg[Konstantin Frank]
+
+==== Nina Holzinger
+
+*Verantwortlichkeiten*
+
+* Backend-Programmierung
+* Frontend-Programmierung
+
+==== David Andraschko
+
+*Verantwortlichkeiten*
+
+* Microcontroller-Programmierung
+* Hardware
+* Frontend-Programmierung
 
 ////
 === Youtrack-Diagram-Gantt
