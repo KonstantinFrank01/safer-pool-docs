@@ -9,11 +9,11 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 
 Kurzfassung - Was ist Netunus? Wofür wird es verwendet?
 
-video::p5PX3PFFbJc[youtube]
+video::p5PX3PFFbJc[youtube, width="800px"]
 
 Extended Version - Technische Umsetzung, Anwendungsfälle, Projektteam etc.
 
-video::2SgHfNun2m4[youtube]
+video::2SgHfNun2m4[youtube, width="800px"]
 
 == Pflichtenheft
 
