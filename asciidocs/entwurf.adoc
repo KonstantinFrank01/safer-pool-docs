@@ -9,16 +9,13 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 
 === Systemarchitektur
 
-Statt dem Raspberry Pi wird zukünftig eine Cloud verwendet. Das Diagramm wird in
-naher Zukunft ausgebessert.
-
 [plantuml]
 ----
 @startuml
 skinparam handwritten true
 
-    node "Raspberry PI" {
-        frame docker{
+    node "Kubernetes" {
+        frame Minikube {
         [MQTT-Broker]
         [WebServer]
         [Quarkus-Server]
