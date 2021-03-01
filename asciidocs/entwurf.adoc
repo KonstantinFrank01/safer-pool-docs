@@ -43,20 +43,6 @@ node "Sensor + Microcontroller" {
 
 === Zustandsdiagramm
 
-
-////
-Das Zustandsdiagramm beschreibt das Verhalten unseres Systems. Es wird in Kürze wieder auf
-den neuesten Stand gebracht. Die meisten Zustände sind aber noch aktuell.
-
-Der Standardzustand ist eine aktive Detektion. Fällt ein Objekt in den Pool, so wird
-eine optische und auditive Alarmierung ausgelöst. Dieser Alarm muss dann manuell wieder
-quittiert werden.
-
-Will der Benutzer zum Beispiel schwimmen gehen, dann kann die Detektion deaktiviert
-werden. Es können auch Systemfehler auftreten, die zu einem
-Systemausfall führen können.
-////
-
 *Detektion aktiv*
 
 Eine aktive Detektion ist der Standardzustand unseres Systems. Wurde die Detektion
@@ -78,10 +64,6 @@ Wird ein Unfall detektiert, so wird ein optischer und akustischer Alarm ausgelö
 
 Es kann leider nicht zu 100% verhindert werden, dass ein Systemfehler auftritt.
 Wurde dieser Fehler behoben startet das System von vorne, also mit einer aktiven Überwachung.
-
-
-
-
 
 [plantuml]
 ----
