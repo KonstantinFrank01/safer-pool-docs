@@ -15,7 +15,7 @@ Nina Holzinger, Konstantin Frank, David Andraschko
 skinparam handwritten true
 
     node "Kubernetes" {
-        frame Minikube {
+        frame Pod {
         [MQTT-Broker]
         [WebServer]
         [Quarkus-Server]
