@@ -482,18 +482,35 @@ pre.rouge .hll * {
 <div class="sect2">
 <h3 id="_zustandsdiagramm"><a class="anchor" href="#_zustandsdiagramm"></a>1.2. Zustandsdiagramm</h3>
 <div class="paragraph">
-<p>Das Zustandsdiagramm beschreibt das Verhalten unseres Systems. Es wird in Kürze wieder auf
-den neuesten Stand gebracht. Die meisten Zustände sind aber noch aktuell.</p>
+<p><strong>Detektion aktiv</strong></p>
 </div>
 <div class="paragraph">
-<p>Der Standardzustand ist eine aktive Detektion. Fällt ein Objekt in den Pool, so wird
-eine optische und auditive Alarmierung ausgelöst. Dieser Alarm muss dann manuell wieder
-quittiert werden.</p>
+<p>Eine aktive Detektion ist der Standardzustand unseres Systems. Wurde die Detektion
+für eine bestimmte Zeitspanne deaktiviert, dann kann der Benutzer sie vor Ablauf der Zeit
+wieder manuell aktivieren. Nach Ablauf der gewählten Zeit aktiviert sich die Detektion automatisch.</p>
 </div>
 <div class="paragraph">
-<p>Will der Benutzer zum Beispiel schwimmen gehen, dann kann die Detektion deaktiviert
-werden. Es können auch Systemfehler auftreten, die zu einem
-Systemausfall führen können.</p>
+<p>Wurde ein Alarm ausgelöst und dieser quittiert, dann ist die Überwachung wieder aktiv.</p>
+</div>
+<div class="paragraph">
+<p><strong>Detektion deaktiviert</strong></p>
+</div>
+<div class="paragraph">
+<p>Die Detektion kann vom Benutzer auf einer grafischen Oberfläche für eine bestimmte Zeitdauer
+deaktiviert werden.</p>
+</div>
+<div class="paragraph">
+<p><strong>Alarm</strong></p>
+</div>
+<div class="paragraph">
+<p>Wird ein Unfall detektiert, so wird ein optischer und akustischer Alarm ausgelöst.</p>
+</div>
+<div class="paragraph">
+<p><strong>Systemausfall</strong></p>
+</div>
+<div class="paragraph">
+<p>Es kann leider nicht zu 100% verhindert werden, dass ein Systemfehler auftritt.
+Wurde dieser Fehler behoben startet das System von vorne, also mit einer aktiven Überwachung.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -533,7 +550,7 @@ Systemausfall führen können.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-03-01 17:23:49 UTC
+Last updated 2021-03-01 17:32:03 UTC
 </div>
 </div>
 </body>
