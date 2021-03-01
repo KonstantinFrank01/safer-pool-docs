@@ -111,7 +111,9 @@ Unser System hat mehrere Anwendungsfälle.
 * Ein Objekt, welches in den Pool fällt kann einen Alarm auslösen
 * Der Poolbesitzer kann den ausgelösten Alarm wieder quittieren
 * Der Poolbesitzer kann die Detektion zeitgesteuert deaktivieren.
-* Der Poolbesitzer kann die Historie der letzten Auslöser betrachten.
+** Diese Funktionalität wird benötigt, wenn man z.B. schwimmen gehen möchte.
+* Der Poolbesitzer kann die Detektion vor Ablauf der Zeit manuell reaktivieren.
+** Diese Funktionalität wird benötigt, wenn man z.B. nicht so lange wie gedacht schwimmen geht.
 
 [plantuml]
 ----
@@ -124,7 +126,7 @@ rectangle NETUNUS{
     /'Poolbesitzer -- (Bekommt Benachrichtigung)'/
     Poolbesitzer -- (Alarm quittieren)
     Poolbesitzer -- (Überwachungssystem zeitgesteuert deaktivieren)
-    Poolbesitzer -- (Historie betrachten)
+    Poolbesitzer -- (Überwachungssystem manuell reaktivieren)
     /'(Bekommt Benachrichtigung) .> (Auslösen des Alarms) : <<extends>>'/
     (Alarm auslösen) -- Objekt
 }
