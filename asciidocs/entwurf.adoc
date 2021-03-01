@@ -63,18 +63,15 @@ skinparam handwritten true
 [*] --> DetektionAktiv
 state "Detektion aktiv" as DetektionAktiv
 state "Detektion deaktiviert" as DetektionDeaktiv
-state "Alarm aktiv" as AlarmAktiv
-state "Alarm quittiert" as AlarmDeaktiv
+state "Alarm" as Alarm
 
-DetektionAktiv --> DetektionDeaktiv : Detektion für gewünschte Zeitdauer deaktivieren
-
-
+DetektionAktiv --> DetektionDeaktiv : Detektion für gewünschte \n Zeitdauer deaktivieren
+DetektionDeaktiv --> DetektionAktiv : Überwachung manuell aktivieren / \n Überwachung aktiviert \n sich nach Ablauf der \n Zeit automatisch
+DetektionAktiv --> Alarm : Unfall detektiert / \n Alarmierung optisch und auditiv
+Alarm --> DetektionAktiv : Alarm quittieren
 DetektionAktiv --> Systemausfall : Systemfehler aufgetreten / \n deaktivierung
-DetektionDeaktiv --> Systemausfall : Fehler aufgetreten
-DetektionAktiv --> AlarmAktiv : Unfall detektiert / \n Alarmierung optisch und auditiv
-Systemausfall --> AlarmAktiv : bei jedem Ausfall / \n Alarmierung nur optisch
-AlarmAktiv --> AlarmDeaktiv : Alarm quittieren
-AlarmDeaktiv --> DetektionAktiv : Alarm aktivieren
+DetektionDeaktiv --> Systemausfall : Systemfehler aufgetreten / \n deaktivierung
+Alarm --> Systemausfall : Systemfehler aufgetreten / \n deaktivierung
 @enduml
 ----
 
